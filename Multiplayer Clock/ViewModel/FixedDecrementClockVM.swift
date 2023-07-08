@@ -8,16 +8,16 @@
 import Combine
 import Foundation
 
-/// Clock VM that decrements by a fixed amount when pausing or switching turns
-class FixedDecrementClockVM: ClockVM {
-    init(configuration: MultiplayerClockConfiguration, decrement: Duration) {
-        self.clock = MultiplayerClock(configuration: configuration)
-        self.configuration = configuration
+/// A ClockVM that decrements by a fixed amount when pausing or switching turns
+class FixedDecrementClockVM<S: Settings>: ClockVM {
+    init(settings: S, decrement: Duration) {
+        self.settings = settings
+        self.clock = MultiplayerClock(configuration: settings.configuration)
         self.decrement = decrement
     }
 
+    private var settings: S
     @Published private var clock: MultiplayerClock
-    private var configuration: MultiplayerClockConfiguration
     private let decrement: Duration
 
     var currentPlayer: UUID {
@@ -52,7 +52,7 @@ class FixedDecrementClockVM: ClockVM {
     }
 
     func reset() {
-        clock = MultiplayerClock(configuration: configuration)
+        clock = MultiplayerClock(configuration: settings.configuration)
     }
 
     func switchToNextPlayer() {

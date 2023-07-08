@@ -11,6 +11,7 @@ struct MainScreen<VM: ClockVM>: View {
     @StateObject var vm: VM
 
     @State private var resetWarningPresented = false
+    @State private var isShowingSettings = false
 
     @ViewBuilder
     var controls: some View {
@@ -18,7 +19,7 @@ struct MainScreen<VM: ClockVM>: View {
             switch vm.state {
             case .unstarted:
                 HStack {
-                    IconButton(icon: .gear)
+                    IconButton(icon: .gear) { isShowingSettings = true }
                 }
             case .running:
                 HStack {
@@ -27,12 +28,12 @@ struct MainScreen<VM: ClockVM>: View {
             case .paused:
                 HStack {
                     IconButton(icon: .reset, action: { resetWarningPresented = true })
-                    IconButton(icon: .gear)
+                    IconButton(icon: .gear) { isShowingSettings = true }
                 }
             case .finished:
                 HStack {
                     IconButton(icon: .reset, action: { resetWarningPresented = true })
-                    IconButton(icon: .gear)
+                    IconButton(icon: .gear) { isShowingSettings = true }
                 }
             }
         }
@@ -41,6 +42,9 @@ struct MainScreen<VM: ClockVM>: View {
                 vm.reset()
                 resetWarningPresented = false
             }
+        }
+        .sheet(isPresented: $isShowingSettings) {
+            SettingsScreen<TransientSettings>()
         }
     }
 
@@ -72,15 +76,15 @@ struct MainScreen<VM: ClockVM>: View {
 }
 
 struct MainScreen_Previews: PreviewProvider {
+    static var settings = TransientSettings()
+
     static var previews: some View {
         MainScreen(
             vm: FixedDecrementClockVM(
-                configuration: .init(
-                    playerCount: 4,
-                    time: .seconds(30)
-                ),
+                settings: settings,
                 decrement: .seconds(7)
             )
         )
+        .environmentObject(settings)
     }
 }

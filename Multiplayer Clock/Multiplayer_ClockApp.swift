@@ -9,14 +9,17 @@ import SwiftUI
 
 @main
 struct Multiplayer_ClockApp: App {
+    @StateObject var settings = TransientSettings()
+
     var body: some Scene {
         WindowGroup {
             MainScreen(
                 vm: FixedDecrementClockVM(
-                    configuration: .init(playerCount: 4, time: .seconds(30)),
+                    settings: settings,
                     decrement: .seconds(4)
                 )
             )
+            .environmentObject(settings)
         }
     }
 }
