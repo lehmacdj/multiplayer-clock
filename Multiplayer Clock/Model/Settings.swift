@@ -11,19 +11,19 @@ import SwiftUI
 
 protocol Settings: ObservableObject {
     var configuration: MultiplayerClockConfiguration { get }
-    associatedtype ConfigurationPublisher: Publisher<MultiplayerClockConfiguration, Never>
-    var configurationPublisher: ConfigurationPublisher { get }
+    var configurationPublisher: AnyPublisher<MultiplayerClockConfiguration, Never> { get }
 
     /// Implementers should ensure that setting this corrects the configuration so that it is compliant
     var playerTimesIndividuallyConfigurable: Bool { get }
-    associatedtype PlayerTimesIndividuallyConfigurablePublisher: Publisher<Bool, Never>
-    var playerTimesIndividuallyConfigurablePublisher: PlayerTimesIndividuallyConfigurablePublisher { get }
+    var playerTimesIndividuallyConfigurablePublisher: AnyPublisher<Bool, Never> { get }
 }
+
 
 protocol WritableSettings: Settings {
     var configuration: MultiplayerClockConfiguration { get set }
     var playerTimesIndividuallyConfigurable: Bool { get set }
 }
+
 
 /// Common operations on settings irrespective of storage implementation
 extension WritableSettings {

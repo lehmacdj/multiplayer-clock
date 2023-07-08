@@ -15,11 +15,12 @@ struct Multiplayer_ClockApp: App {
         WindowGroup {
             MainScreen(
                 vm: FixedDecrementClockVM(
-                    settings: settings,
+                    settings: settings.eraseToAnySettings(),
                     decrement: .seconds(4)
                 )
             )
-            .environmentObject(settings)
+            .environmentObject(settings.eraseToAnySettings())
+            .environmentObject(settings.eraseToAnyWritableSettings())
         }
     }
 }

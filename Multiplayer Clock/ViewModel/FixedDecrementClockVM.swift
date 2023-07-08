@@ -9,14 +9,14 @@ import Combine
 import Foundation
 
 /// A ClockVM that decrements by a fixed amount when pausing or switching turns
-class FixedDecrementClockVM<S: Settings>: ClockVM {
-    init(settings: S, decrement: Duration) {
+final class FixedDecrementClockVM: ClockVM {
+    init(settings: AnySettings, decrement: Duration) {
         self.settings = settings
         self.clock = MultiplayerClock(configuration: settings.configuration)
         self.decrement = decrement
     }
 
-    private var settings: S
+    private var settings: AnySettings
     @Published private var clock: MultiplayerClock
     private let decrement: Duration
 

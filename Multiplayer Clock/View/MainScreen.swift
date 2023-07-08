@@ -44,7 +44,7 @@ struct MainScreen<VM: ClockVM>: View {
             }
         }
         .sheet(isPresented: $isShowingSettings) {
-            SettingsScreen<TransientSettings>()
+            SettingsScreen()
         }
     }
 
@@ -81,10 +81,11 @@ struct MainScreen_Previews: PreviewProvider {
     static var previews: some View {
         MainScreen(
             vm: FixedDecrementClockVM(
-                settings: settings,
+                settings: settings.eraseToAnySettings(),
                 decrement: .seconds(7)
             )
         )
-        .environmentObject(settings)
+        .environmentObject(settings.eraseToAnySettings())
+        .environmentObject(settings.eraseToAnyWritableSettings())
     }
 }

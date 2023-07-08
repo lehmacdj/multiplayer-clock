@@ -10,7 +10,6 @@
 		0375E6AA2A58E149000C3C67 /* Multiplayer_ClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6A92A58E149000C3C67 /* Multiplayer_ClockApp.swift */; };
 		0375E6AC2A58E149000C3C67 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6AB2A58E149000C3C67 /* MainScreen.swift */; };
 		0375E6AE2A58E14A000C3C67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375E6AD2A58E14A000C3C67 /* Assets.xcassets */; };
-		0375E6B12A58E14A000C3C67 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375E6B02A58E14A000C3C67 /* Preview Assets.xcassets */; };
 		0375E6BB2A58E14A000C3C67 /* Multiplayer_ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6BA2A58E14A000C3C67 /* Multiplayer_ClockTests.swift */; };
 		0375E6C52A58E14A000C3C67 /* Multiplayer_ClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6C42A58E14A000C3C67 /* Multiplayer_ClockUITests.swift */; };
 		0375E6C72A58E14A000C3C67 /* Multiplayer_ClockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6C62A58E14A000C3C67 /* Multiplayer_ClockUITestsLaunchTests.swift */; };
@@ -29,6 +28,7 @@
 		0375E6F62A59C301000C3C67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6F52A59C301000C3C67 /* Constants.swift */; };
 		0375E6F82A59D925000C3C67 /* DurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6F72A59D925000C3C67 /* DurationPicker.swift */; };
 		0375E6FA2A59DB55000C3C67 /* Duration+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6F92A59DB55000C3C67 /* Duration+Extensions.swift */; };
+		0375E6FF2A59F7F9000C3C67 /* AnySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6FE2A59F7F9000C3C67 /* AnySettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +74,7 @@
 		0375E6F52A59C301000C3C67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0375E6F72A59D925000C3C67 /* DurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPicker.swift; sourceTree = "<group>"; };
 		0375E6F92A59DB55000C3C67 /* Duration+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duration+Extensions.swift"; sourceTree = "<group>"; };
+		0375E6FE2A59F7F9000C3C67 /* AnySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnySettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +171,7 @@
 				0375E6EA2A590F82000C3C67 /* Settings.swift */,
 				0375E6F12A59B667000C3C67 /* TransientSettings.swift */,
 				0375E6F52A59C301000C3C67 /* Constants.swift */,
+				0375E6FE2A59F7F9000C3C67 /* AnySettings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -344,6 +346,7 @@
 				0375E6E32A58F17B000C3C67 /* FixedDecrementClockVM.swift in Sources */,
 				0375E6EB2A590F82000C3C67 /* Settings.swift in Sources */,
 				0375E6EE2A591267000C3C67 /* SettingsScreen.swift in Sources */,
+				0375E6FF2A59F7F9000C3C67 /* AnySettings.swift in Sources */,
 				0375E6AC2A58E149000C3C67 /* MainScreen.swift in Sources */,
 				0375E6DA2A58E767000C3C67 /* IconButton.swift in Sources */,
 				0375E6E92A590CE6000C3C67 /* PlayerConfiguration.swift in Sources */,

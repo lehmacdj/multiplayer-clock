@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct SettingsScreen<S: WritableSettings>: View {
-    @EnvironmentObject var settings: S
+struct SettingsScreen: View {
+    @EnvironmentObject var settings: AnyWritableSettings
 
     var body: some View {
         NavigationView {
@@ -38,7 +38,7 @@ struct SettingsScreen<S: WritableSettings>: View {
 
 struct SettingsScreen_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsScreen<TransientSettings>()
-            .environmentObject(TransientSettings())
+        SettingsScreen()
+            .environmentObject(TransientSettings().eraseToAnyWritableSettings())
     }
 }

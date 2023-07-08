@@ -11,12 +11,12 @@ import Foundation
 /// Settings that are only stored in memory and restored from the default value whenever the app is restarted
 class TransientSettings: WritableSettings {
     @Published var configuration: MultiplayerClockConfiguration = .init(playerCount: 3, time: .seconds(30))
-    var configurationPublisher: Published<MultiplayerClockConfiguration>.Publisher {
-        $configuration
+    var configurationPublisher: AnyPublisher<MultiplayerClockConfiguration, Never> {
+        $configuration.eraseToAnyPublisher()
     }
 
     @Published var playerTimesIndividuallyConfigurable: Bool = false
-    var playerTimesIndividuallyConfigurablePublisher: Published<Bool>.Publisher {
-        $playerTimesIndividuallyConfigurable
+    var playerTimesIndividuallyConfigurablePublisher: AnyPublisher<Bool, Never> {
+        $playerTimesIndividuallyConfigurable.eraseToAnyPublisher()
     }
 }
