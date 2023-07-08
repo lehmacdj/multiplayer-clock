@@ -13,4 +13,14 @@ struct MultiplayerClockConfiguration {
     init(playerCount: Int, time: Duration) {
         players = .init(repeatElement(PlayerConfiguration(time: time), count: playerCount))
     }
+
+    mutating func addPlayer() {
+        assert(players.count > 0 && players.count < Constants.maxPlayerCount)
+        players.append(PlayerConfiguration(time: players.last!.time))
+    }
+
+    mutating func removePlayer() {
+        assert(players.count > Constants.minPlayerCount, "can't have less than one player")
+        players.removeLast()
+    }
 }

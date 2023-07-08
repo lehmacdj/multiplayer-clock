@@ -10,26 +10,36 @@ import SwiftUI
 struct MainScreen<VM: ClockVM>: View {
     @StateObject var vm: VM
 
+    @State private var resetWarningPresented = false
+
     @ViewBuilder
     var controls: some View {
-        switch vm.state {
-        case .unstarted:
-            HStack {
-                IconButton(icon: .gear)
+        Group {
+            switch vm.state {
+            case .unstarted:
+                HStack {
+                    IconButton(icon: .gear)
+                }
+            case .running:
+                HStack {
+                    IconButton(icon: .pause, action: vm.pause)
+                }
+            case .paused:
+                HStack {
+                    IconButton(icon: .reset, action: { resetWarningPresented = true })
+                    IconButton(icon: .gear)
+                }
+            case .finished:
+                HStack {
+                    IconButton(icon: .reset, action: { resetWarningPresented = true })
+                    IconButton(icon: .gear)
+                }
             }
-        case .running:
-            HStack {
-                IconButton(icon: .pause, action: vm.pause)
-            }
-        case .paused:
-            HStack {
-                IconButton(icon: .reset, action: vm.reset)
-                IconButton(icon: .gear)
-            }
-        case .finished:
-            HStack {
-                IconButton(icon: .reset, action: vm.reset)
-                IconButton(icon: .gear)
+        }
+        .alert("Reset Clock?", isPresented: $resetWarningPresented) {
+            Button("Reset", role: .destructive) {
+                vm.reset()
+                resetWarningPresented = false
             }
         }
     }

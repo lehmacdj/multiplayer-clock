@@ -23,6 +23,12 @@
 		0375E6E52A5900CA000C3C67 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6E42A5900CA000C3C67 /* ViewModifiers.swift */; };
 		0375E6E72A590722000C3C67 /* MultiplayerClockConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6E62A590722000C3C67 /* MultiplayerClockConfiguration.swift */; };
 		0375E6E92A590CE6000C3C67 /* PlayerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6E82A590CE6000C3C67 /* PlayerConfiguration.swift */; };
+		0375E6EB2A590F82000C3C67 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6EA2A590F82000C3C67 /* Settings.swift */; };
+		0375E6EE2A591267000C3C67 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6ED2A591267000C3C67 /* SettingsScreen.swift */; };
+		0375E6F22A59B667000C3C67 /* TransientSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6F12A59B667000C3C67 /* TransientSettings.swift */; };
+		0375E6F62A59C301000C3C67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6F52A59C301000C3C67 /* Constants.swift */; };
+		0375E6F82A59D925000C3C67 /* DurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6F72A59D925000C3C67 /* DurationPicker.swift */; };
+		0375E6FA2A59DB55000C3C67 /* Duration+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6F92A59DB55000C3C67 /* Duration+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +68,12 @@
 		0375E6E42A5900CA000C3C67 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		0375E6E62A590722000C3C67 /* MultiplayerClockConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerClockConfiguration.swift; sourceTree = "<group>"; };
 		0375E6E82A590CE6000C3C67 /* PlayerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerConfiguration.swift; sourceTree = "<group>"; };
+		0375E6EA2A590F82000C3C67 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		0375E6ED2A591267000C3C67 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		0375E6F12A59B667000C3C67 /* TransientSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransientSettings.swift; sourceTree = "<group>"; };
+		0375E6F52A59C301000C3C67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0375E6F72A59D925000C3C67 /* DurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPicker.swift; sourceTree = "<group>"; };
+		0375E6F92A59DB55000C3C67 /* Duration+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duration+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,15 +124,13 @@
 		0375E6A82A58E149000C3C67 /* Multiplayer Clock */ = {
 			isa = PBXGroup;
 			children = (
+				0375E6EC2A59124E000C3C67 /* Utils */,
 				0375E6DD2A58EBE3000C3C67 /* ViewModel */,
 				0375E6D82A58E759000C3C67 /* View */,
 				0375E6D32A58E1C6000C3C67 /* Model */,
 				0375E6A92A58E149000C3C67 /* Multiplayer_ClockApp.swift */,
-				0375E6AB2A58E149000C3C67 /* MainScreen.swift */,
 				0375E6AD2A58E14A000C3C67 /* Assets.xcassets */,
 				0375E6AF2A58E14A000C3C67 /* Preview Content */,
-				0375E6DB2A58E791000C3C67 /* Icon.swift */,
-				0375E6E42A5900CA000C3C67 /* ViewModifiers.swift */,
 			);
 			path = "Multiplayer Clock";
 			sourceTree = "<group>";
@@ -157,6 +167,9 @@
 				0375E6D62A58E229000C3C67 /* MultiplayerClock.swift */,
 				0375E6E62A590722000C3C67 /* MultiplayerClockConfiguration.swift */,
 				0375E6E82A590CE6000C3C67 /* PlayerConfiguration.swift */,
+				0375E6EA2A590F82000C3C67 /* Settings.swift */,
+				0375E6F12A59B667000C3C67 /* TransientSettings.swift */,
+				0375E6F52A59C301000C3C67 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,7 +177,10 @@
 		0375E6D82A58E759000C3C67 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0375E6AB2A58E149000C3C67 /* MainScreen.swift */,
 				0375E6D92A58E767000C3C67 /* IconButton.swift */,
+				0375E6ED2A591267000C3C67 /* SettingsScreen.swift */,
+				0375E6F72A59D925000C3C67 /* DurationPicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +192,16 @@
 				0375E6E22A58F17B000C3C67 /* FixedDecrementClockVM.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0375E6EC2A59124E000C3C67 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0375E6DB2A58E791000C3C67 /* Icon.swift */,
+				0375E6E42A5900CA000C3C67 /* ViewModifiers.swift */,
+				0375E6F92A59DB55000C3C67 /* Duration+Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +308,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0375E6B12A58E14A000C3C67 /* Preview Assets.xcassets in Resources */,
 				0375E6AE2A58E14A000C3C67 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,14 +336,20 @@
 				0375E6DC2A58E791000C3C67 /* Icon.swift in Sources */,
 				0375E6D52A58E202000C3C67 /* Player.swift in Sources */,
 				0375E6E12A58EF68000C3C67 /* ClockVM.swift in Sources */,
+				0375E6F82A59D925000C3C67 /* DurationPicker.swift in Sources */,
+				0375E6F22A59B667000C3C67 /* TransientSettings.swift in Sources */,
 				0375E6E52A5900CA000C3C67 /* ViewModifiers.swift in Sources */,
+				0375E6F62A59C301000C3C67 /* Constants.swift in Sources */,
 				0375E6D72A58E229000C3C67 /* MultiplayerClock.swift in Sources */,
 				0375E6E32A58F17B000C3C67 /* FixedDecrementClockVM.swift in Sources */,
+				0375E6EB2A590F82000C3C67 /* Settings.swift in Sources */,
+				0375E6EE2A591267000C3C67 /* SettingsScreen.swift in Sources */,
 				0375E6AC2A58E149000C3C67 /* MainScreen.swift in Sources */,
 				0375E6DA2A58E767000C3C67 /* IconButton.swift in Sources */,
 				0375E6E92A590CE6000C3C67 /* PlayerConfiguration.swift in Sources */,
 				0375E6E72A590722000C3C67 /* MultiplayerClockConfiguration.swift in Sources */,
 				0375E6AA2A58E149000C3C67 /* Multiplayer_ClockApp.swift in Sources */,
+				0375E6FA2A59DB55000C3C67 /* Duration+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
