@@ -22,7 +22,7 @@ extension Icon {
     var imageName: String {
         switch self {
         case .gear:
-            return "gearshape"
+            return "gearshape.fill"
         case .pause:
             return "pause.fill"
         case .reset:

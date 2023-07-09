@@ -14,11 +14,19 @@ final class FixedDecrementClockVM: ClockVM {
         self.settings = settings
         self.clock = MultiplayerClock(configuration: settings.configuration)
         self.decrement = decrement
+
+        settings.configurationPublisher.sink { [weak self] configuration in
+            if self?.clock.state == .unstarted {
+                self?.reset(with: configuration)
+            }
+        }
+        .store(in: &subscriptions)
     }
 
     private var settings: AnySettings
     @Published private var clock: MultiplayerClock
     private let decrement: Duration
+    private var subscriptions = Set<AnyCancellable>()
 
     var currentPlayer: UUID {
         clock.players[clock.currentPlayer].id
@@ -51,8 +59,15 @@ final class FixedDecrementClockVM: ClockVM {
         clock.pause()
     }
 
+    /// Sadly we need a stub like this for protocol conformance even though it would be
+    /// possible to call reset without arguments anyways
     func reset() {
-        clock = MultiplayerClock(configuration: settings.configuration)
+        reset(with: nil)
+    }
+
+    private func reset(with configuration: MultiplayerClockConfiguration? = nil) {
+        let configuration = configuration ?? settings.configuration
+        clock = MultiplayerClock(configuration: configuration)
     }
 
     func switchToNextPlayer() {
