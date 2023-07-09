@@ -27,21 +27,18 @@ struct MainScreen<VM: ClockVM>: View {
                 }
             case .paused:
                 HStack {
-                    IconButton(icon: .reset, action: { resetWarningPresented = true })
+                    IconButton(icon: .reset) { resetWarningPresented = true }
                     IconButton(icon: .gear) { isShowingSettings = true }
                 }
             case .finished:
                 HStack {
-                    IconButton(icon: .reset, action: { resetWarningPresented = true })
+                    IconButton(icon: .reset) { resetWarningPresented = true }
                     IconButton(icon: .gear) { isShowingSettings = true }
                 }
             }
         }
         .alert("Reset Clock?", isPresented: $resetWarningPresented) {
-            Button("Reset", role: .destructive) {
-                vm.reset()
-                resetWarningPresented = false
-            }
+            Button("Reset", role: .destructive, action: vm.reset)
         }
         .sheet(isPresented: $isShowingSettings) {
             SettingsScreen()
