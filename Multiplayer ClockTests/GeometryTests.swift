@@ -24,5 +24,6 @@ final class Multiplayer_ClockTests: XCTestCase {
         intersectionTest(ray: ((0, 0), .pi / 4), line: ((1, 0), (0, 1)))
         intersectionTest(ray: ((0, 0), .pi / 4), line: ((1, 0), (1, 2)))
         intersectionTest(ray: ((0, 0), 0), line: ((1, 1), (1, -1)))
+        intersectionTest(ray: ((0, 0), .pi), line: ((-1, 1), (-1, -1)))
     }
 }

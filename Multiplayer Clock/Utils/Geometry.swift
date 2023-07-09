@@ -79,12 +79,12 @@ extension Line {
             let lesserX = min(self.start.x, self.end.x)
             guard lesserX <= ray.origin.x else { return nil }
             let width = (lesserX - ray.origin.x) * multiplier
-            otherPoint = CGPoint(x: ray.origin.x - width, y: ray.origin.y - width * tan(ray.direction.radians))
+            otherPoint = CGPoint(x: ray.origin.x + width, y: ray.origin.y + width * tan(ray.direction.radians))
         } else {
             let lesserY = min(self.start.y, self.end.y)
             guard lesserY <= ray.origin.y else { return nil }
             let height = (lesserY - ray.origin.y) * multiplier
-            otherPoint = CGPoint(x: ray.origin.x + height / tan(ray.direction.radians), y: ray.origin.y - height)
+            otherPoint = CGPoint(x: ray.origin.x + height / tan(ray.direction.radians), y: ray.origin.y + height)
         }
         return self.intersection(with: Line(start: ray.origin, end: otherPoint))
     }
