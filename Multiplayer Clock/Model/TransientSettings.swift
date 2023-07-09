@@ -19,4 +19,9 @@ class TransientSettings: WritableSettings {
     var playerTimesIndividuallyConfigurablePublisher: AnyPublisher<Bool, Never> {
         $playerTimesIndividuallyConfigurable.eraseToAnyPublisher()
     }
+
+    @Published var countPastZero: Bool = false
+    var countPastZeroPublisher: AnyPublisher<Bool, Never> {
+        $countPastZero.eraseToAnyPublisher()
+    }
 }

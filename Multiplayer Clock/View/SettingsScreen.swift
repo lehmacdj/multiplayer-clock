@@ -20,11 +20,14 @@ struct SettingsScreen: View {
                 )
                 Toggle("Separate player times?", isOn: $settings.playerTimesIndividuallyConfigurable)
                     .disabled(true)
+                Toggle("Count past zero?", isOn: $settings.countPastZero)
+                    .disabled(true)
 
                 Section {
                     if !settings.playerTimesIndividuallyConfigurable {
                         NavigationLink("All Players: \(settings.allPlayersTime.wrappedValue.formatted(.units(allowed: [.minutes, .seconds])))") {
                             DurationPicker(duration: settings.allPlayersTime)
+                                .navigationTitle("Time for All Players")
                         }
                     } else {
                         Text("Separate player times not yet implemented")

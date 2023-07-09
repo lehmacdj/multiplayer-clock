@@ -16,12 +16,16 @@ protocol Settings: ObservableObject {
     /// Implementers should ensure that setting this corrects the configuration so that it is compliant
     var playerTimesIndividuallyConfigurable: Bool { get }
     var playerTimesIndividuallyConfigurablePublisher: AnyPublisher<Bool, Never> { get }
+
+    var countPastZero: Bool { get }
+    var countPastZeroPublisher: AnyPublisher<Bool, Never> { get }
 }
 
 
 protocol WritableSettings: Settings {
     var configuration: MultiplayerClockConfiguration { get set }
     var playerTimesIndividuallyConfigurable: Bool { get set }
+    var countPastZero: Bool { get set }
 }
 
 

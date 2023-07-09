@@ -32,6 +32,13 @@ final class AnySettings: Settings {
     var playerTimesIndividuallyConfigurablePublisher: AnyPublisher<Bool, Never> {
         settings.playerTimesIndividuallyConfigurablePublisher
     }
+
+    var countPastZero: Bool {
+        settings.countPastZero
+    }
+    var countPastZeroPublisher: AnyPublisher<Bool, Never> {
+        settings.countPastZeroPublisher
+    }
 }
 
 extension Settings {
@@ -73,6 +80,18 @@ final class AnyWritableSettings: WritableSettings {
     }
     var playerTimesIndividuallyConfigurablePublisher: AnyPublisher<Bool, Never> {
         settings.playerTimesIndividuallyConfigurablePublisher
+    }
+
+    var countPastZero: Bool {
+        get {
+            settings.countPastZero
+        }
+        set {
+            settings.countPastZero = newValue
+        }
+    }
+    var countPastZeroPublisher: AnyPublisher<Bool, Never> {
+        settings.countPastZeroPublisher
     }
 }
 
