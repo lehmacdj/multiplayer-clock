@@ -12,7 +12,7 @@ struct MultiplayerClock {
     var players: [Player]
     var state: State
 
-    enum State {
+    enum State: CaseIterable, Hashable {
         case unstarted
         case running
         case paused
