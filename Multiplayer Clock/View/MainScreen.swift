@@ -13,14 +13,7 @@ struct MainScreen<VM: ClockVM>: View {
     var body: some View {
         VStack {
             ClockControls(state: vm.state, play: vm.play, pause: vm.pause, reset: vm.reset)
-            ForEach(vm.players) { player in
-                if (player.id == vm.currentPlayer) {
-                    DurationLabel(duration: player.time)
-                        .foregroundColor(.accentColor)
-                } else {
-                    DurationLabel(duration: player.time)
-                }
-            }
+            TimeDisplay(active: vm.currentPlayer, durations: vm.players.map(\.time))
             .onTapGesture {
                 switch vm.state {
                 case .unstarted, .paused:

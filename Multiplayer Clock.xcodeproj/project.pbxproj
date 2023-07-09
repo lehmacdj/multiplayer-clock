@@ -36,6 +36,7 @@
 		0375E70E2A5B1978000C3C67 /* RealtimeClockVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E70D2A5B1978000C3C67 /* RealtimeClockVM.swift */; };
 		0375E7102A5B2026000C3C67 /* DurationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E70F2A5B2026000C3C67 /* DurationLabel.swift */; };
 		0375E7132A5B2681000C3C67 /* ClockControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E7122A5B2681000C3C67 /* ClockControls.swift */; };
+		0375E7172A5B2AE5000C3C67 /* TimeDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E7162A5B2AE5000C3C67 /* TimeDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		0375E70D2A5B1978000C3C67 /* RealtimeClockVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeClockVM.swift; sourceTree = "<group>"; };
 		0375E70F2A5B2026000C3C67 /* DurationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationLabel.swift; sourceTree = "<group>"; };
 		0375E7122A5B2681000C3C67 /* ClockControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockControls.swift; sourceTree = "<group>"; };
+		0375E7162A5B2AE5000C3C67 /* TimeDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				0375E7002A5A0615000C3C67 /* PartitionedRectangle.swift */,
 				0375E70F2A5B2026000C3C67 /* DurationLabel.swift */,
 				0375E7122A5B2681000C3C67 /* ClockControls.swift */,
+				0375E7162A5B2AE5000C3C67 /* TimeDisplay.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				0375E6EB2A590F82000C3C67 /* Settings.swift in Sources */,
 				0375E6EE2A591267000C3C67 /* SettingsScreen.swift in Sources */,
 				0375E7132A5B2681000C3C67 /* ClockControls.swift in Sources */,
+				0375E7172A5B2AE5000C3C67 /* TimeDisplay.swift in Sources */,
 				0375E6FF2A59F7F9000C3C67 /* AnySettings.swift in Sources */,
 				0375E6AC2A58E149000C3C67 /* MainScreen.swift in Sources */,
 				0375E6DA2A58E767000C3C67 /* IconButton.swift in Sources */,

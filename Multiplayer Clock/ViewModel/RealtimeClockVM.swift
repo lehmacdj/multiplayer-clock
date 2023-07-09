@@ -54,11 +54,11 @@ final class RealtimeClockVM: ClockVM {
         lastTime = nil
     }
 
-    var currentPlayer: UUID {
-        clock.players[clock.currentPlayer].id
+    var currentPlayer: Int {
+        clock.currentPlayer
     }
-    var currentPlayerPublisher: some Publisher<UUID, Never> {
-        $clock.map { $0.players[$0.currentPlayer].id }
+    var currentPlayerPublisher: some Publisher<Int, Never> {
+        $clock.map(\.currentPlayer)
     }
 
     var players: [Player] {

@@ -9,10 +9,12 @@ import Combine
 import Foundation
 
 protocol ClockVM: ObservableObject {
-    var currentPlayer: UUID { get }
-    associatedtype CurrentPlayerPublisher: Publisher<UUID, Never>
+    /// index of the current player in the players array
+    var currentPlayer: Int { get }
+    associatedtype CurrentPlayerPublisher: Publisher<Int, Never>
     var currentPlayerPublisher: CurrentPlayerPublisher { get }
 
+    /// array of players; the order of these is assumed to be fixed
     var players: [Player] { get }
     associatedtype PlayersPublisher: Publisher<[Player], Never>
     var playerTimesPublisher: PlayersPublisher { get }
