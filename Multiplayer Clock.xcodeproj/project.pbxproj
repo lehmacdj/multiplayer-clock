@@ -33,6 +33,7 @@
 		0375E7062A5A46C7000C3C67 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 0375E7052A5A46C7000C3C67 /* SnapshotTesting */; };
 		0375E7092A5A4758000C3C67 /* GeometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E7082A5A4758000C3C67 /* GeometryTests.swift */; };
 		0375E70C2A5A7072000C3C67 /* Collections+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E70B2A5A7072000C3C67 /* Collections+Extensions.swift */; };
+		0375E70E2A5B1978000C3C67 /* RealtimeClockVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E70D2A5B1978000C3C67 /* RealtimeClockVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		0375E7022A5A3E13000C3C67 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		0375E7082A5A4758000C3C67 /* GeometryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryTests.swift; sourceTree = "<group>"; };
 		0375E70B2A5A7072000C3C67 /* Collections+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collections+Extensions.swift"; sourceTree = "<group>"; };
+		0375E70D2A5B1978000C3C67 /* RealtimeClockVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeClockVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			children = (
 				0375E6E02A58EF68000C3C67 /* ClockVM.swift */,
 				0375E6E22A58F17B000C3C67 /* FixedDecrementClockVM.swift */,
+				0375E70D2A5B1978000C3C67 /* RealtimeClockVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				0375E6AC2A58E149000C3C67 /* MainScreen.swift in Sources */,
 				0375E6DA2A58E767000C3C67 /* IconButton.swift in Sources */,
 				0375E6E92A590CE6000C3C67 /* PlayerConfiguration.swift in Sources */,
+				0375E70E2A5B1978000C3C67 /* RealtimeClockVM.swift in Sources */,
 				0375E6E72A590722000C3C67 /* MultiplayerClockConfiguration.swift in Sources */,
 				0375E6AA2A58E149000C3C67 /* Multiplayer_ClockApp.swift in Sources */,
 				0375E6FA2A59DB55000C3C67 /* Duration+Extensions.swift in Sources */,

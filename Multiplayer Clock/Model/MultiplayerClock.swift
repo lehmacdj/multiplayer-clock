@@ -33,6 +33,7 @@ struct MultiplayerClock {
         assert(state == .running)
         players[currentPlayer].time -= time
         if players[currentPlayer].time <= .zero {
+            players[currentPlayer].time = .zero
             state = .finished
         }
     }

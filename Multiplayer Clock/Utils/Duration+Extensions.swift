@@ -12,3 +12,9 @@ extension Duration {
         .seconds(minutes * 60)
     }
 }
+
+extension Date {
+    func durationSince(_ date: Date) -> Duration {
+        .seconds(self.timeIntervalSince(date))
+    }
+}
