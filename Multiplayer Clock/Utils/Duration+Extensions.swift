@@ -11,6 +11,11 @@ extension Duration {
     static func minutes<T>(_ minutes: T) -> Self where T: BinaryInteger {
         .seconds(minutes * 60)
     }
+
+    var seconds: Double {
+        let v = components
+        return Double(v.seconds) + Double(v.attoseconds) * 1e-18
+    }
 }
 
 extension Date {

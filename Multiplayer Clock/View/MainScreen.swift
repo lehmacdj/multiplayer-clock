@@ -50,10 +50,10 @@ struct MainScreen<VM: ClockVM>: View {
             controls
             ForEach(vm.players) { player in
                 if (player.id == vm.currentPlayer) {
-                    Text("\(player.time.description)")
-                        .font(.largeTitle)
+                    DurationLabel(duration: player.time)
+                        .foregroundColor(.accentColor)
                 } else {
-                    Text("\(player.time.description)")
+                    DurationLabel(duration: player.time)
                 }
             }
             .onTapGesture {

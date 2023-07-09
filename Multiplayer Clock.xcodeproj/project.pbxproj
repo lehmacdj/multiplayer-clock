@@ -34,6 +34,7 @@
 		0375E7092A5A4758000C3C67 /* GeometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E7082A5A4758000C3C67 /* GeometryTests.swift */; };
 		0375E70C2A5A7072000C3C67 /* Collections+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E70B2A5A7072000C3C67 /* Collections+Extensions.swift */; };
 		0375E70E2A5B1978000C3C67 /* RealtimeClockVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E70D2A5B1978000C3C67 /* RealtimeClockVM.swift */; };
+		0375E7102A5B2026000C3C67 /* DurationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E70F2A5B2026000C3C67 /* DurationLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		0375E7082A5A4758000C3C67 /* GeometryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryTests.swift; sourceTree = "<group>"; };
 		0375E70B2A5A7072000C3C67 /* Collections+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collections+Extensions.swift"; sourceTree = "<group>"; };
 		0375E70D2A5B1978000C3C67 /* RealtimeClockVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeClockVM.swift; sourceTree = "<group>"; };
+		0375E70F2A5B2026000C3C67 /* DurationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				0375E6ED2A591267000C3C67 /* SettingsScreen.swift */,
 				0375E6F72A59D925000C3C67 /* DurationPicker.swift */,
 				0375E7002A5A0615000C3C67 /* PartitionedRectangle.swift */,
+				0375E70F2A5B2026000C3C67 /* DurationLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				0375E6E72A590722000C3C67 /* MultiplayerClockConfiguration.swift in Sources */,
 				0375E6AA2A58E149000C3C67 /* Multiplayer_ClockApp.swift in Sources */,
 				0375E6FA2A59DB55000C3C67 /* Duration+Extensions.swift in Sources */,
+				0375E7102A5B2026000C3C67 /* DurationLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
