@@ -12,5 +12,5 @@ enum Constants {}
 
 extension Constants {
     static let minPlayerCount: Int = 1
-    static let maxPlayerCount: Int = 10
+    static let maxPlayerCount: Int = 6
 }

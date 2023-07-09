@@ -13,6 +13,10 @@ struct Multiplayer_ClockApp: App {
 
     var body: some Scene {
         WindowGroup {
+//            PartitionedRectangle(
+//                angles: [.radians(0), .radians(.pi / 2), .radians(4 * .pi / 3)],
+//                colors: [.red, .green, .blue]
+//            )
             MainScreen(
                 vm: FixedDecrementClockVM(
                     settings: settings.eraseToAnySettings(),

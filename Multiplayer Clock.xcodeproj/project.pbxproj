@@ -10,7 +10,6 @@
 		0375E6AA2A58E149000C3C67 /* Multiplayer_ClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6A92A58E149000C3C67 /* Multiplayer_ClockApp.swift */; };
 		0375E6AC2A58E149000C3C67 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6AB2A58E149000C3C67 /* MainScreen.swift */; };
 		0375E6AE2A58E14A000C3C67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375E6AD2A58E14A000C3C67 /* Assets.xcassets */; };
-		0375E6BB2A58E14A000C3C67 /* Multiplayer_ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6BA2A58E14A000C3C67 /* Multiplayer_ClockTests.swift */; };
 		0375E6C52A58E14A000C3C67 /* Multiplayer_ClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6C42A58E14A000C3C67 /* Multiplayer_ClockUITests.swift */; };
 		0375E6C72A58E14A000C3C67 /* Multiplayer_ClockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6C62A58E14A000C3C67 /* Multiplayer_ClockUITestsLaunchTests.swift */; };
 		0375E6D52A58E202000C3C67 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6D42A58E202000C3C67 /* Player.swift */; };
@@ -29,6 +28,11 @@
 		0375E6F82A59D925000C3C67 /* DurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6F72A59D925000C3C67 /* DurationPicker.swift */; };
 		0375E6FA2A59DB55000C3C67 /* Duration+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6F92A59DB55000C3C67 /* Duration+Extensions.swift */; };
 		0375E6FF2A59F7F9000C3C67 /* AnySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E6FE2A59F7F9000C3C67 /* AnySettings.swift */; };
+		0375E7012A5A0615000C3C67 /* PartitionedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E7002A5A0615000C3C67 /* PartitionedRectangle.swift */; };
+		0375E7032A5A3E13000C3C67 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E7022A5A3E13000C3C67 /* Geometry.swift */; };
+		0375E7062A5A46C7000C3C67 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 0375E7052A5A46C7000C3C67 /* SnapshotTesting */; };
+		0375E7092A5A4758000C3C67 /* GeometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E7082A5A4758000C3C67 /* GeometryTests.swift */; };
+		0375E70C2A5A7072000C3C67 /* Collections+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E70B2A5A7072000C3C67 /* Collections+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +59,6 @@
 		0375E6AD2A58E14A000C3C67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0375E6B02A58E14A000C3C67 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0375E6B62A58E14A000C3C67 /* Multiplayer ClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Multiplayer ClockTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0375E6BA2A58E14A000C3C67 /* Multiplayer_ClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplayer_ClockTests.swift; sourceTree = "<group>"; };
 		0375E6C02A58E14A000C3C67 /* Multiplayer ClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Multiplayer ClockUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0375E6C42A58E14A000C3C67 /* Multiplayer_ClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplayer_ClockUITests.swift; sourceTree = "<group>"; };
 		0375E6C62A58E14A000C3C67 /* Multiplayer_ClockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplayer_ClockUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -75,6 +78,10 @@
 		0375E6F72A59D925000C3C67 /* DurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPicker.swift; sourceTree = "<group>"; };
 		0375E6F92A59DB55000C3C67 /* Duration+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duration+Extensions.swift"; sourceTree = "<group>"; };
 		0375E6FE2A59F7F9000C3C67 /* AnySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnySettings.swift; sourceTree = "<group>"; };
+		0375E7002A5A0615000C3C67 /* PartitionedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartitionedRectangle.swift; sourceTree = "<group>"; };
+		0375E7022A5A3E13000C3C67 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		0375E7082A5A4758000C3C67 /* GeometryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryTests.swift; sourceTree = "<group>"; };
+		0375E70B2A5A7072000C3C67 /* Collections+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collections+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0375E7062A5A46C7000C3C67 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +155,7 @@
 		0375E6B92A58E14A000C3C67 /* Multiplayer ClockTests */ = {
 			isa = PBXGroup;
 			children = (
-				0375E6BA2A58E14A000C3C67 /* Multiplayer_ClockTests.swift */,
+				0375E7082A5A4758000C3C67 /* GeometryTests.swift */,
 			);
 			path = "Multiplayer ClockTests";
 			sourceTree = "<group>";
@@ -183,6 +191,7 @@
 				0375E6D92A58E767000C3C67 /* IconButton.swift */,
 				0375E6ED2A591267000C3C67 /* SettingsScreen.swift */,
 				0375E6F72A59D925000C3C67 /* DurationPicker.swift */,
+				0375E7002A5A0615000C3C67 /* PartitionedRectangle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +211,8 @@
 				0375E6DB2A58E791000C3C67 /* Icon.swift */,
 				0375E6E42A5900CA000C3C67 /* ViewModifiers.swift */,
 				0375E6F92A59DB55000C3C67 /* Duration+Extensions.swift */,
+				0375E7022A5A3E13000C3C67 /* Geometry.swift */,
+				0375E70B2A5A7072000C3C67 /* Collections+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -240,6 +251,9 @@
 				0375E6B82A58E14A000C3C67 /* PBXTargetDependency */,
 			);
 			name = "Multiplayer ClockTests";
+			packageProductDependencies = (
+				0375E7052A5A46C7000C3C67 /* SnapshotTesting */,
+			);
 			productName = "Multiplayer ClockTests";
 			productReference = 0375E6B62A58E14A000C3C67 /* Multiplayer ClockTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -277,6 +291,7 @@
 					};
 					0375E6B52A58E14A000C3C67 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 						TestTargetID = 0375E6A52A58E149000C3C67;
 					};
 					0375E6BF2A58E14A000C3C67 = {
@@ -294,6 +309,9 @@
 				Base,
 			);
 			mainGroup = 0375E69D2A58E149000C3C67;
+			packageReferences = (
+				0375E7042A5A46C7000C3C67 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 0375E6A72A58E149000C3C67 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -337,12 +355,15 @@
 			files = (
 				0375E6DC2A58E791000C3C67 /* Icon.swift in Sources */,
 				0375E6D52A58E202000C3C67 /* Player.swift in Sources */,
+				0375E7012A5A0615000C3C67 /* PartitionedRectangle.swift in Sources */,
 				0375E6E12A58EF68000C3C67 /* ClockVM.swift in Sources */,
 				0375E6F82A59D925000C3C67 /* DurationPicker.swift in Sources */,
 				0375E6F22A59B667000C3C67 /* TransientSettings.swift in Sources */,
 				0375E6E52A5900CA000C3C67 /* ViewModifiers.swift in Sources */,
 				0375E6F62A59C301000C3C67 /* Constants.swift in Sources */,
 				0375E6D72A58E229000C3C67 /* MultiplayerClock.swift in Sources */,
+				0375E70C2A5A7072000C3C67 /* Collections+Extensions.swift in Sources */,
+				0375E7032A5A3E13000C3C67 /* Geometry.swift in Sources */,
 				0375E6E32A58F17B000C3C67 /* FixedDecrementClockVM.swift in Sources */,
 				0375E6EB2A590F82000C3C67 /* Settings.swift in Sources */,
 				0375E6EE2A591267000C3C67 /* SettingsScreen.swift in Sources */,
@@ -360,7 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0375E6BB2A58E14A000C3C67 /* Multiplayer_ClockTests.swift in Sources */,
+				0375E7092A5A4758000C3C67 /* GeometryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +698,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0375E7042A5A46C7000C3C67 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0375E7052A5A46C7000C3C67 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0375E7042A5A46C7000C3C67 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0375E69E2A58E149000C3C67 /* Project object */;
 }
