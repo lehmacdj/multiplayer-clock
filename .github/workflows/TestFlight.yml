@@ -1,13 +1,15 @@
-name: build-ios-app
+name: TestFlight
 on:
   push:
     branches:
       - 'main'
 jobs:
-  build:
+  fastlane_beta:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
       - run: bundle exec fastlane beta
         env:
           AUTHKEY: ${{ secrets.AUTHKEY_52MJL54U87_P8 }}
+          GITHUB_TOKEN: ${{ secrets.FASTLANE_MATCH_GITHUB_TOKEN }}
+          MATCH_PASSWORD: ${{ secrets.FASTLANE_MATCH_PASSWORD }}
