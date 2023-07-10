@@ -25,7 +25,10 @@ platform :ios do
       issuer_id: 'c82e4c52-3c01-4bc3-ac1c-84a79e9f986a',
       key_content: ENV['AUTHKEY']
     )
-    match
+    match # uses MATCH_PASSWORD and MATCH_GIT_BASIC_AUTHORIZATION env vars
+    # get provisioning profile into local directory so it's available for
+    # update_project_provisioning
+    get_provisioning_profile
     update_project_provisioning(xcodeproj: "Multiplayer Clock.xcodeproj")
     build_app(scheme: "Multiplayer Clock", xcargs: "-allowProvisioningUpdates")
     run_tests

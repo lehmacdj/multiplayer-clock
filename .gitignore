@@ -5,4 +5,5 @@
 *.ipa
 *.app.dSYM.zip
 
+*.mobileprovision
 fastlane/report.xml
