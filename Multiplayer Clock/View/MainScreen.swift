@@ -11,10 +11,8 @@ struct MainScreen<VM: ClockVM>: View {
     @StateObject var vm: VM
 
     var body: some View {
-        VStack {
-            ClockControls(state: vm.state, play: vm.play, pause: vm.pause, reset: vm.reset)
-            TimeDisplay(active: vm.currentPlayer, durations: vm.players.map(\.time))
-            .onTapGesture {
+        ZStack {
+            Button {
                 switch vm.state {
                 case .unstarted, .paused:
                     vm.play()
@@ -23,10 +21,17 @@ struct MainScreen<VM: ClockVM>: View {
                 case .finished:
                     break
                 }
+            } label: {
+                Color.clear
             }
+            .ignoresSafeArea()
+            VStack {
+                ClockControls(state: vm.state, play: vm.play, pause: vm.pause, reset: vm.reset)
+                TimeDisplay(active: vm.currentPlayer, durations: vm.players.map(\.time))
+            }
+            .padding()
+            .preventsDeviceSleeping()
         }
-        .padding()
-        .preventsDeviceSleeping()
     }
 }
 

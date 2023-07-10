@@ -18,8 +18,13 @@ default_platform(:ios)
 platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
-    increment_build_number(xcodeproj: "Multiplayer Clock.xcodeproj")
-    build_app(scheme: "Multiplayer Clock")
+    ensure_env_vars(env_vars: 'AUTHKEY')
+    app_store_connect_api_key(
+      key_id: '52MJL54U87',
+      issuer_id: 'c82e4c52-3c01-4bc3-ac1c-84a79e9f986a',
+      key_content: ENV['AUTHKEY']
+    )
+    build_app(scheme: "Multiplayer Clock", xcargs: "-allowProvisioningUpdates")
     upload_to_testflight
   end
 end

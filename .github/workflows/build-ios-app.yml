@@ -1,0 +1,13 @@
+name: build-ios-app
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: fastlane beta
+        env:
+          AUTHKEY: ${{ secrets.AUTHKEY_52MJL54U87_P8 }}
