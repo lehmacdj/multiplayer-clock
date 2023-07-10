@@ -25,6 +25,8 @@ platform :ios do
       issuer_id: 'c82e4c52-3c01-4bc3-ac1c-84a79e9f986a',
       key_content: ENV['AUTHKEY']
     )
+    get_certificates
+    get_provisioning_profile
     build_app(scheme: "Multiplayer Clock", xcargs: "-allowProvisioningUpdates")
     upload_to_testflight
   end
