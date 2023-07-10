@@ -29,6 +29,10 @@ platform :ios do
     # get provisioning profile into local directory so it's available for
     # update_project_provisioning
     get_provisioning_profile
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      path: "Multiplayer Clock.xcodeproj"
+    )
     update_project_provisioning(xcodeproj: "Multiplayer Clock.xcodeproj")
     build_app(scheme: "Multiplayer Clock", xcargs: "-allowProvisioningUpdates")
     run_tests
