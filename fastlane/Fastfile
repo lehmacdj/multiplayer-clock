@@ -27,6 +27,7 @@ platform :ios do
     )
     get_certificates
     get_provisioning_profile
+    update_project_provisioning(xcodeproj: "Multiplayer Clock.xcodeproj")
     build_app(scheme: "Multiplayer Clock", xcargs: "-allowProvisioningUpdates")
     upload_to_testflight
   end
