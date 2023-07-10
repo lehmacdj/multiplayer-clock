@@ -11,6 +11,7 @@ struct MultiplayerClockConfiguration {
     var players: [PlayerConfiguration]
 
     init(playerCount: Int, time: Duration) {
+        assert(playerCount <= Constants.maxPlayerCount && playerCount >= Constants.minPlayerCount)
         players = .init(repeatElement(PlayerConfiguration(time: time), count: playerCount))
     }
 

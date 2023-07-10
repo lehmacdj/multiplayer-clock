@@ -37,6 +37,7 @@
 		0375E7102A5B2026000C3C67 /* DurationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E70F2A5B2026000C3C67 /* DurationLabel.swift */; };
 		0375E7132A5B2681000C3C67 /* ClockControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E7122A5B2681000C3C67 /* ClockControls.swift */; };
 		0375E7172A5B2AE5000C3C67 /* TimeDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E7162A5B2AE5000C3C67 /* TimeDisplay.swift */; };
+		0375E7192A5B375B000C3C67 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E7182A5B375B000C3C67 /* Color+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		0375E70F2A5B2026000C3C67 /* DurationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationLabel.swift; sourceTree = "<group>"; };
 		0375E7122A5B2681000C3C67 /* ClockControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockControls.swift; sourceTree = "<group>"; };
 		0375E7162A5B2AE5000C3C67 /* TimeDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDisplay.swift; sourceTree = "<group>"; };
+		0375E7182A5B375B000C3C67 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		0375E71A2A5B923A000C3C67 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,7 @@
 		0375E69D2A58E149000C3C67 = {
 			isa = PBXGroup;
 			children = (
+				0375E71A2A5B923A000C3C67 /* Playground.playground */,
 				0375E6A82A58E149000C3C67 /* Multiplayer Clock */,
 				0375E6B92A58E14A000C3C67 /* Multiplayer ClockTests */,
 				0375E6C32A58E14A000C3C67 /* Multiplayer ClockUITests */,
@@ -225,6 +229,7 @@
 				0375E6F92A59DB55000C3C67 /* Duration+Extensions.swift */,
 				0375E7022A5A3E13000C3C67 /* Geometry.swift */,
 				0375E70B2A5A7072000C3C67 /* Collections+Extensions.swift */,
+				0375E7182A5B375B000C3C67 /* Color+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				0375E6F82A59D925000C3C67 /* DurationPicker.swift in Sources */,
 				0375E6F22A59B667000C3C67 /* TransientSettings.swift in Sources */,
 				0375E6E52A5900CA000C3C67 /* ViewModifiers.swift in Sources */,
+				0375E7192A5B375B000C3C67 /* Color+Extensions.swift in Sources */,
 				0375E6F62A59C301000C3C67 /* Constants.swift in Sources */,
 				0375E6D72A58E229000C3C67 /* MultiplayerClock.swift in Sources */,
 				0375E70C2A5A7072000C3C67 /* Collections+Extensions.swift in Sources */,
