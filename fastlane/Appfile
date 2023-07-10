@@ -1,0 +1,8 @@
+app_identifier("io.github.lehmacdj.Multiplayer-Clock") # The bundle identifier of your app
+apple_id("lehmacdj@gmail.com") # Your Apple Developer Portal username
+
+itc_team_id("126034111") # App Store Connect Team ID
+team_id("YJTZ9H869C") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
