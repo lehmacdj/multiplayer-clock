@@ -34,10 +34,10 @@
 		0375E7092A5A4758000C3C67 /* GeometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E7082A5A4758000C3C67 /* GeometryTests.swift */; };
 		0375E70C2A5A7072000C3C67 /* Collections+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E70B2A5A7072000C3C67 /* Collections+Extensions.swift */; };
 		0375E70E2A5B1978000C3C67 /* RealtimeClockVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E70D2A5B1978000C3C67 /* RealtimeClockVM.swift */; };
-		0375E7102A5B2026000C3C67 /* DurationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E70F2A5B2026000C3C67 /* DurationLabel.swift */; };
 		0375E7132A5B2681000C3C67 /* ClockControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E7122A5B2681000C3C67 /* ClockControls.swift */; };
 		0375E7172A5B2AE5000C3C67 /* TimeDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E7162A5B2AE5000C3C67 /* TimeDisplay.swift */; };
 		0375E7192A5B375B000C3C67 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375E7182A5B375B000C3C67 /* Color+Extensions.swift */; };
+		03ABC4262A5CE91F005244A3 /* DurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABC4252A5CE91F005244A3 /* DurationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,11 +88,11 @@
 		0375E7082A5A4758000C3C67 /* GeometryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryTests.swift; sourceTree = "<group>"; };
 		0375E70B2A5A7072000C3C67 /* Collections+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collections+Extensions.swift"; sourceTree = "<group>"; };
 		0375E70D2A5B1978000C3C67 /* RealtimeClockVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeClockVM.swift; sourceTree = "<group>"; };
-		0375E70F2A5B2026000C3C67 /* DurationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationLabel.swift; sourceTree = "<group>"; };
 		0375E7122A5B2681000C3C67 /* ClockControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockControls.swift; sourceTree = "<group>"; };
 		0375E7162A5B2AE5000C3C67 /* TimeDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDisplay.swift; sourceTree = "<group>"; };
 		0375E7182A5B375B000C3C67 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		0375E71A2A5B923A000C3C67 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		03ABC4252A5CE91F005244A3 /* DurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				0375E7082A5A4758000C3C67 /* GeometryTests.swift */,
+				03ABC4252A5CE91F005244A3 /* DurationTests.swift */,
 			);
 			path = "Multiplayer ClockTests";
 			sourceTree = "<group>";
@@ -204,7 +205,6 @@
 				0375E6ED2A591267000C3C67 /* SettingsScreen.swift */,
 				0375E6F72A59D925000C3C67 /* DurationPicker.swift */,
 				0375E7002A5A0615000C3C67 /* PartitionedRectangle.swift */,
-				0375E70F2A5B2026000C3C67 /* DurationLabel.swift */,
 				0375E7122A5B2681000C3C67 /* ClockControls.swift */,
 				0375E7162A5B2AE5000C3C67 /* TimeDisplay.swift */,
 			);
@@ -395,7 +395,6 @@
 				0375E6E72A590722000C3C67 /* MultiplayerClockConfiguration.swift in Sources */,
 				0375E6AA2A58E149000C3C67 /* Multiplayer_ClockApp.swift in Sources */,
 				0375E6FA2A59DB55000C3C67 /* Duration+Extensions.swift in Sources */,
-				0375E7102A5B2026000C3C67 /* DurationLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0375E7092A5A4758000C3C67 /* GeometryTests.swift in Sources */,
+				03ABC4262A5CE91F005244A3 /* DurationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

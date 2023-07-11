@@ -18,6 +18,22 @@ extension Duration {
     }
 }
 
+struct TimeLeft: FormatStyle {
+    func format(_ duration: Duration) -> String {
+        if duration >= .minutes(100) {
+            return duration.formatted(.time(pattern: .hourMinuteSecond))
+        } else if duration >= .minutes(1) {
+            return duration.formatted(.time(pattern: .minuteSecond))
+        } else {
+            return duration.seconds.formatted(.number.precision(.fractionLength(1)))
+        }
+    }
+}
+
+extension FormatStyle where Self == TimeLeft {
+    static var timeLeft: TimeLeft { TimeLeft() }
+}
+
 extension Date {
     func durationSince(_ date: Date) -> Duration {
         .seconds(self.timeIntervalSince(date))

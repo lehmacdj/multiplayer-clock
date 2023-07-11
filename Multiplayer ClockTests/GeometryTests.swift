@@ -9,7 +9,7 @@
 import SnapshotTesting
 import XCTest
 
-final class Multiplayer_ClockTests: XCTestCase {
+final class GeometryTests: XCTestCase {
     func intersectionTest(ray: ((CGFloat, CGFloat), CGFloat), line: ((CGFloat, CGFloat), (CGFloat, CGFloat))) {
         let ray_ = Ray(origin: CGPoint(x: ray.0.0, y: ray.0.1), direction: .radians(ray.1))
         let line_ = Line(start: CGPoint(x: line.0.0, y: line.0.1), end: CGPoint(x: line.1.0, y: line.1.1))

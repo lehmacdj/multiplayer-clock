@@ -66,10 +66,10 @@ struct TimeDisplay: View {
                 ForEach(0..<durations.count, id: \.self) { ix in
                     let duration = durations[ix]
                     if (ix == active) {
-                        DurationLabel(duration: duration)
+                        Text(duration.formatted(.timeLeft))
                             .foregroundColor(.accentColor)
                     } else {
-                        DurationLabel(duration: duration)
+                        Text(duration.formatted(.timeLeft))
                     }
                 }
             }
