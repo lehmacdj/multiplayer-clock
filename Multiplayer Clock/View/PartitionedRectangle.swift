@@ -95,7 +95,8 @@ struct PartitionedRectangle_Previews: PreviewProvider {
         PartitionedRectangle(
             angles: [.radians(0), .radians(.pi / 2 - 0.2), .radians(4 * .pi / 3)],
             colors: [.red, .green, .blue],
-            unitCenter: UnitPoint(x: 0.4, y: 0.6)
+            unitCenter: UnitPoint(x: 0.4, y: 0.6),
+            action: {}
         ) {
             Circle()
                 .frame(width: 50, height: 50)

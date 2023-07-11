@@ -52,7 +52,7 @@ extension WritableSettings {
             get: { [weak self] in self!.configuration.players.first!.time },
             set: { [weak self] newValue in
                 guard let self else { return }
-                configuration = .init(playerCount: configuration.players.count, time: newValue)
+                self.configuration = .init(playerCount: self.configuration.players.count, time: newValue)
             }
         )
     }
