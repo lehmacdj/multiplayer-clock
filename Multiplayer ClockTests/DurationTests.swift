@@ -19,11 +19,11 @@ final class DurationTests: XCTestCase {
             "99:59"
         )
         XCTAssertEqual(
-            (.minutes(5) + .seconds(17.3).formatted(.timeLeft),
+            (.minutes(5) + .seconds(17.3)).formatted(.timeLeft),
             "5:17"
         )
         XCTAssertEqual(
-            .seconds(17.310481084018).formatted(.timeLeft),
+            Duration.seconds(17.310481084018).formatted(.timeLeft),
             "17.3"
         )
     }
