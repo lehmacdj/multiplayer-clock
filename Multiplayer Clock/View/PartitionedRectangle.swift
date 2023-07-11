@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Partitions a rectangle radially separated by rays with the specified angles, coloring the partitions with the specified colors.
-struct PartitionedRectangle: View {
+struct PartitionedRectangle<CenterView: View>: View {
     /// An array of increasing angles all less than 2π used to divide the rectangle into sections.
     let angles: [Angle]
 
@@ -16,12 +16,19 @@ struct PartitionedRectangle: View {
     let colors: [Color]
 
     /// Center from which to partition from
-    let unitCenter: UnitPoint = .center
+    let unitCenter: UnitPoint
 
-    init(angles: [Angle], colors: [Color]) {
+    let centerView: CenterView
+
+    let action: () -> Void
+
+    init(angles: [Angle], colors: [Color], unitCenter: UnitPoint = .center, action: @escaping () -> Void = {}, centerView: @escaping () -> CenterView = { EmptyView() }) {
         assert(angles.count == colors.count && angles.sorted() == angles)
         self.angles = angles
         self.colors = colors
+        self.unitCenter = unitCenter
+        self.centerView = centerView()
+        self.action = action
     }
 
     var body: some View {
@@ -53,22 +60,31 @@ struct PartitionedRectangle: View {
                 return .radians(radians < 0 ? radians + 2 * .pi : radians)
             }
 
-            ForEach(0..<angles.count, id: \.hashValue) { ix1 in
-                let ix2 = (ix1 + 1) % angles.count
-                let angle1 = angles[ix1]
-                let angle2 = angles[ix2]
-                Path { path in
-                    path.move(to: center)
-                    path.addLine(to: intersections[ix1])
-                    for (cix, cornerAngle) in cornerAngles.enumerated() {
-                        if cornerAngle > angle1 && (cornerAngle < angle2 || angle2 < angle1) {
-                            path.addLine(to: corners[cix])
+            ZStack {
+                ForEach(0..<angles.count, id: \.hashValue) { ix1 in
+                    let ix2 = (ix1 + 1) % angles.count
+                    let angle1 = angles[ix1]
+                    let angle2 = angles[ix2]
+                    Path { path in
+                        path.move(to: center)
+                        path.addLine(to: intersections[ix1])
+                        for (cix, cornerAngle) in cornerAngles.enumerated() {
+                            if cornerAngle > angle1 && (cornerAngle < angle2 || angle2 < angle1) {
+                                path.addLine(to: corners[cix])
+                            }
                         }
+                        path.addLine(to: intersections[ix2])
+                        path.closeSubpath()
                     }
-                    path.addLine(to: intersections[ix2])
-                    path.closeSubpath()
+                    .fill(colors[ix1])
                 }
-                .fill(colors[ix1])
+
+                Button(action: action) {
+                    Color.clear
+                }
+
+                let actualCenter = CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                centerView.offset(x: center.x - actualCenter.x, y: center.y - actualCenter.y)
             }
         }
     }
@@ -76,7 +92,15 @@ struct PartitionedRectangle: View {
 
 struct PartitionedRectangle_Previews: PreviewProvider {
     static var previews: some View {
-        PartitionedRectangle(angles: [.radians(0), .radians(.pi / 2 - 0.2), .radians(4 * .pi / 3)], colors: [.red, .green, .blue])
-            .ignoresSafeArea()
+        PartitionedRectangle(
+            angles: [.radians(0), .radians(.pi / 2 - 0.2), .radians(4 * .pi / 3)],
+            colors: [.red, .green, .blue],
+            unitCenter: UnitPoint(x: 0.4, y: 0.6)
+        ) {
+            Circle()
+                .frame(width: 50, height: 50)
+                .foregroundColor(.black)
+        }
+        .ignoresSafeArea()
     }
 }

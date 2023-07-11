@@ -12,5 +12,5 @@ enum Constants {}
 
 extension Constants {
     static let minPlayerCount: Int = 1
-    static let maxPlayerCount: Int = 6
+    static let maxPlayerCount: Int = 5 // temporarily 5 while 6 is completely unfinished in TimeDisplay
 }

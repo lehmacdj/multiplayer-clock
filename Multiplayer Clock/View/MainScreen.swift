@@ -14,7 +14,13 @@ struct MainScreen<VM: ClockVM>: View {
 
     var body: some View {
         ZStack {
-            Button {
+            TimeDisplay(
+                active: vm.currentPlayer,
+                durations: vm.players.map(\.time),
+                state: vm.state
+            ) {
+                ClockControls(state: vm.state, play: vm.play, pause: vm.pause, reset: vm.reset)
+            } action: {
                 switch vm.state {
                 case .unstarted, .paused:
                     vm.play()
@@ -23,15 +29,8 @@ struct MainScreen<VM: ClockVM>: View {
                 case .finished:
                     break
                 }
-            } label: {
-                Color.clear
             }
             .ignoresSafeArea()
-            VStack {
-                ClockControls(state: vm.state, play: vm.play, pause: vm.pause, reset: vm.reset)
-                TimeDisplay(active: vm.currentPlayer, durations: vm.players.map(\.time))
-            }
-            .padding()
             .preventsDeviceSleeping()
             .onChange(of: scenePhase) {
                 if $0 == .background && settings.pauseClockWhenBackgrounding {

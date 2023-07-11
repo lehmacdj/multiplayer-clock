@@ -30,6 +30,7 @@ struct IconButton: View {
             }
             .frame(width: 60, height: 60)
         }
+        .accentColor(.black)
     }
 }
 
