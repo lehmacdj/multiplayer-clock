@@ -39,6 +39,13 @@ final class AnySettings: Settings {
     var countPastZeroPublisher: AnyPublisher<Bool, Never> {
         settings.countPastZeroPublisher
     }
+
+    var pauseClockWhenBackgrounding: Bool {
+        settings.pauseClockWhenBackgrounding
+    }
+    var pauseClockWhenBackgroundingPublisher: AnyPublisher<Bool, Never> {
+        settings.pauseClockWhenBackgroundingPublisher
+    }
 }
 
 extension Settings {
@@ -92,6 +99,18 @@ final class AnyWritableSettings: WritableSettings {
     }
     var countPastZeroPublisher: AnyPublisher<Bool, Never> {
         settings.countPastZeroPublisher
+    }
+
+    var pauseClockWhenBackgrounding: Bool {
+        get {
+            settings.pauseClockWhenBackgrounding
+        }
+        set {
+            settings.pauseClockWhenBackgrounding = newValue
+        }
+    }
+    var pauseClockWhenBackgroundingPublisher: AnyPublisher<Bool, Never> {
+        settings.pauseClockWhenBackgroundingPublisher
     }
 }
 

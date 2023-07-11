@@ -24,4 +24,9 @@ class TransientSettings: WritableSettings {
     var countPastZeroPublisher: AnyPublisher<Bool, Never> {
         $countPastZero.eraseToAnyPublisher()
     }
+
+    @Published var pauseClockWhenBackgrounding: Bool = true
+    var pauseClockWhenBackgroundingPublisher: AnyPublisher<Bool, Never> {
+        $pauseClockWhenBackgrounding.eraseToAnyPublisher()
+    }
 }

@@ -22,6 +22,7 @@ struct SettingsScreen: View {
                     .disabled(true)
                 Toggle("Count past zero?", isOn: $settings.countPastZero)
                     .disabled(true)
+                Toggle("Pause when backgrounding?", isOn: $settings.pauseClockWhenBackgrounding)
 
                 Section {
                     if !settings.playerTimesIndividuallyConfigurable {

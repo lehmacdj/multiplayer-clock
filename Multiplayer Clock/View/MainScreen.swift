@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainScreen<VM: ClockVM>: View {
     @StateObject var vm: VM
+    @Environment(\.scenePhase) var scenePhase
+    @EnvironmentObject var settings: AnySettings
 
     var body: some View {
         ZStack {
@@ -31,6 +33,11 @@ struct MainScreen<VM: ClockVM>: View {
             }
             .padding()
             .preventsDeviceSleeping()
+            .onChange(of: scenePhase) {
+                if $0 == .background && settings.pauseClockWhenBackgrounding {
+                    vm.pause()
+                }
+            }
         }
     }
 }
