@@ -17,25 +17,21 @@ opt_out_usage
 default_platform(:ios)
 
 platform :ios do
-  desc "Push a new beta build to TestFlight"
+  desc "Push a new beta build to TestFlight after testing it"
   lane :beta do
-    ensure_env_vars(env_vars: 'AUTHKEY')
+    ensure_env_vars(env_vars: ['AUTHKEY', 'MATCH_PASSWORD', 'MATCH_GIT_BASIC_AUTHORIZATION'])
     app_store_connect_api_key(
       key_id: '52MJL54U87',
       issuer_id: 'c82e4c52-3c01-4bc3-ac1c-84a79e9f986a',
       key_content: ENV['AUTHKEY']
     )
-    match # uses MATCH_PASSWORD and MATCH_GIT_BASIC_AUTHORIZATION env vars
-    # get provisioning profile into local directory so it's available for
-    # update_project_provisioning
-    get_provisioning_profile
-    update_code_signing_settings(
-      use_automatic_signing: false,
-      path: "Multiplayer Clock.xcodeproj"
-    )
-    update_project_provisioning(xcodeproj: "Multiplayer Clock.xcodeproj")
-    build_app(scheme: "Multiplayer Clock", xcargs: "-allowProvisioningUpdates")
+    match(type: "appstore")
     run_tests
+    build_app(
+      scheme: "Multiplayer Clock",
+      xcargs: "-allowProvisioningUpdates",
+      configuration: "Release"
+    )
     upload_to_testflight
   end
 end
