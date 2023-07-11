@@ -21,6 +21,12 @@ final class RealtimeClockVM: ClockVM {
         }
         .store(in: &subscriptions)
 
+        $clock.map(\.state).sink { [weak self] state in
+            if state == MultiplayerClock.State.finished {
+                self?.stopTimer()
+            }
+        }
+        .store(in: &subscriptions)
     }
 
     private var settings: AnySettings
