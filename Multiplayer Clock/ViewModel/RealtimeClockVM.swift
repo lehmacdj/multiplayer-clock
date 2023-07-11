@@ -31,7 +31,10 @@ final class RealtimeClockVM: ClockVM {
     private var lastTime: Date?
 
     private func elapseTime() {
-        guard let lastTime else { fatalError("last time should be set whenever timer is set") }
+        guard let lastTime else {
+            // this is possible if we receive a timer event after pausing has finished
+            return
+        }
         let now = Date.now
         let delta = now.durationSince(lastTime)
         self.lastTime = now
