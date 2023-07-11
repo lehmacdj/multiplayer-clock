@@ -21,7 +21,6 @@ struct SettingsScreen: View {
                 Toggle("Separate player times?", isOn: $settings.playerTimesIndividuallyConfigurable)
                     .disabled(true)
                 Toggle("Count past zero?", isOn: $settings.countPastZero)
-                    .disabled(true)
                 Toggle("Pause when backgrounding?", isOn: $settings.pauseClockWhenBackgrounding)
 
                 Section {

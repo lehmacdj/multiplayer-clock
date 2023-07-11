@@ -12,7 +12,7 @@ import Foundation
 final class FixedDecrementClockVM: ClockVM {
     init(settings: AnySettings, decrement: Duration) {
         self.settings = settings
-        self.clock = MultiplayerClock(configuration: settings.configuration)
+        self.clock = MultiplayerClock(configuration: settings.configuration, settings: settings)
         self.decrement = decrement
 
         settings.configurationPublisher.sink { [weak self] configuration in
@@ -67,7 +67,7 @@ final class FixedDecrementClockVM: ClockVM {
 
     private func reset(with configuration: MultiplayerClockConfiguration? = nil) {
         let configuration = configuration ?? settings.configuration
-        clock = MultiplayerClock(configuration: configuration)
+        clock = MultiplayerClock(configuration: configuration, settings: settings)
     }
 
     func switchToNextPlayer() {

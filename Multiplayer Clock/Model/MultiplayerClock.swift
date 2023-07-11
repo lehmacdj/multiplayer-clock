@@ -11,6 +11,7 @@ struct MultiplayerClock {
     var currentPlayer: Int
     var players: [Player]
     var state: State
+    var settings: AnySettings
 
     enum State: CaseIterable, Hashable {
         case unstarted
@@ -19,20 +20,21 @@ struct MultiplayerClock {
         case finished
     }
 
-    init(playerCount: Int, time: Duration) {
-        self.init(configuration: .init(playerCount: playerCount, time: time))
+    init(playerCount: Int, time: Duration, settings: AnySettings) {
+        self.init(configuration: .init(playerCount: playerCount, time: time), settings: settings)
     }
 
-    init(configuration: MultiplayerClockConfiguration) {
+    init(configuration: MultiplayerClockConfiguration, settings: AnySettings) {
         currentPlayer = 0
         players = configuration.players.map { Player(configuration: $0) }
         state = .unstarted
+        self.settings = settings
     }
 
     mutating func elapse(time: Duration) {
         assert(state == .running)
         players[currentPlayer].time -= time
-        if players[currentPlayer].time <= .zero {
+        if players[currentPlayer].time <= .zero && !settings.countPastZero {
             players[currentPlayer].time = .zero
             state = .finished
         }

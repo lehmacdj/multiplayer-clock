@@ -312,7 +312,11 @@ struct TimeDisplay_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(0..<(Constants.maxPlayerCount + 1), id: \.self) { n in
             ForEach(0..<n, id: \.self) { active in
-                let clock = MultiplayerClock(playerCount: n, time: .seconds(17.3))
+                let clock = MultiplayerClock(
+                    playerCount: n,
+                    time: .seconds(17.3),
+                    settings: TransientSettings().eraseToAnySettings()
+                )
                 TimeDisplay(
                     active: active,
                     durations: clock.players.map(\.time),

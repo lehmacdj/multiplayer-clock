@@ -12,7 +12,7 @@ import Foundation
 final class RealtimeClockVM: ClockVM {
     init(settings: AnySettings) {
         self.settings = settings
-        self.clock = MultiplayerClock(configuration: settings.configuration)
+        self.clock = MultiplayerClock(configuration: settings.configuration, settings: settings)
 
         settings.configurationPublisher.sink { [weak self] configuration in
             if self?.clock.state == .unstarted {
@@ -103,7 +103,7 @@ final class RealtimeClockVM: ClockVM {
 
     private func reset(with configuration: MultiplayerClockConfiguration? = nil) {
         let configuration = configuration ?? settings.configuration
-        clock = MultiplayerClock(configuration: configuration)
+        clock = MultiplayerClock(configuration: configuration, settings: settings)
     }
 
     func switchToNextPlayer() {
