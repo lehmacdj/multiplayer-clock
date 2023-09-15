@@ -28,9 +28,16 @@ extension Duration {
 
 struct TimeLeft: FormatStyle {
     func format(_ duration: Duration) -> String {
-        if duration.magnitude >= .minutes(100) {
+        // apple's time formatter formats negative durations weirdly as "-6:-23" for example
+        let nonNegativeFormat = formatNonNegative(duration.magnitude)
+        let prefix = duration < .zero ? "-" : ""
+        return prefix + nonNegativeFormat
+    }
+
+    private func formatNonNegative(_ duration: Duration) -> String {
+        if duration >= .minutes(100) {
             return duration.formatted(.time(pattern: .hourMinuteSecond))
-        } else if duration.magnitude >= .minutes(1) {
+        } else if duration >= .minutes(1) {
             return duration.formatted(.time(pattern: .minuteSecond))
         } else {
             return duration.seconds.formatted(.number.precision(.fractionLength(1)))

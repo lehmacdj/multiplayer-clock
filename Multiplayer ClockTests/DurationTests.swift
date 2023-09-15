@@ -26,5 +26,17 @@ final class DurationTests: XCTestCase {
             Duration.seconds(17.310481084018).formatted(.timeLeft),
             "17.3"
         )
+        XCTAssertEqual(
+            Duration.seconds(-77).formatted(.timeLeft),
+            "-1:17"
+        )
+    }
+
+    func testAppleMinuteSecondNegativeDurationTimeFormat() {
+        XCTAssertEqual(
+            Duration.seconds(-77).formatted(.time(pattern: .minuteSecond)),
+            "-1:-17",
+            "Apple has fixed the bug in their .minuteSecond time format for negative numbers! Update our custom .timeLeft to not work around this bug."
+        )
     }
 }
