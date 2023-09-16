@@ -30,6 +30,8 @@ struct TimeDisplay<CenterView: View>: View {
 
     let action: () -> Void
 
+    @EnvironmentObject var settings: AnySettings
+
     init(active: Int, durations: [Duration], state: MultiplayerClock.State, centerView: @escaping () -> CenterView = { EmptyView() }, action: @escaping () -> Void = {}) {
         self.active = active
         self.durations = durations
@@ -296,7 +298,7 @@ struct TimeDisplay<CenterView: View>: View {
                 ForEach(0..<durations.count, id: \.self) { ix in
                     let duration = durations[ix]
                     let labelPosition = labelPositions[ix]
-                    Text(duration.formatted(.timeLeft))
+                    Text(duration.formatted(.timeLeft(showTenthsOfASecond: settings.showTenthsOfASecond)))
                         .systemFont(size: 72, relativeTo: .largeTitle)
                         .rotationEffect(labelPosition.angle)
                         .offset(x: labelPosition.dx, y: labelPosition.dy)
@@ -309,19 +311,22 @@ struct TimeDisplay<CenterView: View>: View {
 }
 
 struct TimeDisplay_Previews: PreviewProvider {
+    @State static var settings = TransientSettings()
+
     static var previews: some View {
         ForEach(0..<(Constants.maxPlayerCount + 1), id: \.self) { n in
             ForEach(0..<n, id: \.self) { active in
                 let clock = MultiplayerClock(
                     playerCount: n,
-                    time: .seconds(17.3),
-                    settings: TransientSettings().eraseToAnySettings()
+                    time: .minutes(5) + .seconds(55),
+                    settings: settings.eraseToAnySettings()
                 )
                 TimeDisplay(
                     active: active,
                     durations: clock.players.map(\.time),
                     state: clock.state
                 )
+                .environmentObject(settings.eraseToAnySettings())
             }
         }
     }

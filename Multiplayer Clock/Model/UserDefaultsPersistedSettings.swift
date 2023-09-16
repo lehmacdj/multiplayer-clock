@@ -29,4 +29,9 @@ class UserDefaultsPersistedSettings: WritableSettings {
     var pauseClockWhenBackgroundingPublisher: AnyPublisher<Bool, Never> {
         $pauseClockWhenBackgrounding
     }
+
+    @WrappedDefault(key: "pauseClockWhenBackgrounding") var showTenthsOfASecond = false
+    var showTenthsOfASecondPublisher: AnyPublisher<Bool, Never> {
+        $pauseClockWhenBackgrounding
+    }
 }

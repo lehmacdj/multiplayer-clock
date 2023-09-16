@@ -22,6 +22,7 @@ struct SettingsScreen: View {
                     .disabled(true)
                 Toggle("Count past zero?", isOn: $settings.countPastZero)
                 Toggle("Pause when backgrounding?", isOn: $settings.pauseClockWhenBackgrounding)
+                Toggle("Show tenths of a second?", isOn: $settings.showTenthsOfASecond)
 
                 Section {
                     if !settings.playerTimesIndividuallyConfigurable {

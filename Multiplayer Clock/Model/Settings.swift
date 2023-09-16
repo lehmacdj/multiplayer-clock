@@ -22,6 +22,9 @@ protocol Settings: ObservableObject {
 
     var pauseClockWhenBackgrounding: Bool { get }
     var pauseClockWhenBackgroundingPublisher: AnyPublisher<Bool, Never> { get }
+
+    var showTenthsOfASecond: Bool { get }
+    var showTenthsOfASecondPublisher: AnyPublisher<Bool, Never> { get }
 }
 
 protocol WritableSettings: Settings {
@@ -29,6 +32,7 @@ protocol WritableSettings: Settings {
     var playerTimesIndividuallyConfigurable: Bool { get set }
     var countPastZero: Bool { get set }
     var pauseClockWhenBackgrounding: Bool { get set }
+    var showTenthsOfASecond: Bool { get set }
 }
 
 /// Common operations on settings irrespective of storage implementation

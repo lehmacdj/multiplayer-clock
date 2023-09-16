@@ -46,6 +46,13 @@ final class AnySettings: Settings {
     var pauseClockWhenBackgroundingPublisher: AnyPublisher<Bool, Never> {
         settings.pauseClockWhenBackgroundingPublisher
     }
+
+    var showTenthsOfASecond: Bool {
+        settings.showTenthsOfASecond
+    }
+    var showTenthsOfASecondPublisher: AnyPublisher<Bool, Never> {
+        settings.showTenthsOfASecondPublisher
+    }
 }
 
 extension Settings {
@@ -111,6 +118,18 @@ final class AnyWritableSettings: WritableSettings {
     }
     var pauseClockWhenBackgroundingPublisher: AnyPublisher<Bool, Never> {
         settings.pauseClockWhenBackgroundingPublisher
+    }
+
+    var showTenthsOfASecond: Bool {
+        get {
+            settings.showTenthsOfASecond
+        }
+        set {
+            settings.showTenthsOfASecond = newValue
+        }
+    }
+    var showTenthsOfASecondPublisher: AnyPublisher<Bool, Never> {
+        settings.showTenthsOfASecondPublisher
     }
 }
 

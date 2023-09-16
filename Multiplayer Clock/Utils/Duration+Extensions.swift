@@ -27,6 +27,8 @@ extension Duration {
 }
 
 struct TimeLeft: FormatStyle {
+    let showTenthsOfASecond: Bool
+
     func format(_ duration: Duration) -> String {
         // apple's time formatter formats negative durations weirdly as "-6:-23" for example
         let nonNegativeFormat = formatNonNegative(duration.magnitude)
@@ -39,14 +41,18 @@ struct TimeLeft: FormatStyle {
             return duration.formatted(.time(pattern: .hourMinuteSecond))
         } else if duration >= .minutes(1) {
             return duration.formatted(.time(pattern: .minuteSecond))
-        } else {
+        } else if showTenthsOfASecond {
             return duration.seconds.formatted(.number.precision(.fractionLength(1)))
+        } else {
+            return duration.seconds.formatted(.number.precision(.fractionLength(0)))
         }
     }
 }
 
 extension FormatStyle where Self == TimeLeft {
-    static var timeLeft: TimeLeft { TimeLeft() }
+    static func timeLeft(showTenthsOfASecond: Bool) -> TimeLeft {
+        TimeLeft(showTenthsOfASecond: showTenthsOfASecond)
+    }
 }
 
 extension Date {

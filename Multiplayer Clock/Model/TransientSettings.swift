@@ -29,4 +29,9 @@ class TransientSettings: WritableSettings {
     var pauseClockWhenBackgroundingPublisher: AnyPublisher<Bool, Never> {
         $pauseClockWhenBackgrounding.eraseToAnyPublisher()
     }
+
+    @Published var showTenthsOfASecond: Bool = false
+    var showTenthsOfASecondPublisher: AnyPublisher<Bool, Never> {
+        $showTenthsOfASecond.eraseToAnyPublisher()
+    }
 }
