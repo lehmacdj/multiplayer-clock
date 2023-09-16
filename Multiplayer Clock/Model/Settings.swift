@@ -60,4 +60,18 @@ extension WritableSettings {
             }
         )
     }
+
+    var playerTimes: [Binding<Duration>] {
+        configuration.players.enumerated().map { index, player in
+            Binding(
+                get: { player.time },
+                set: { [weak self] newValue in
+                    guard let self else { return }
+                    var mutableConfiguration = self.configuration
+                    mutableConfiguration.players[index].time = newValue
+                    self.configuration = mutableConfiguration
+                }
+            )
+        }
+    }
 }

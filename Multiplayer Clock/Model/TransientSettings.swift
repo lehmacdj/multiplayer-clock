@@ -15,7 +15,16 @@ class TransientSettings: WritableSettings {
         $configuration.eraseToAnyPublisher()
     }
 
-    @Published var playerTimesIndividuallyConfigurable: Bool = false
+    @Published var playerTimesIndividuallyConfigurable: Bool = false {
+        didSet {
+            if playerTimesIndividuallyConfigurable == false && oldValue {
+                configuration = MultiplayerClockConfiguration(
+                    playerCount: configuration.players.count,
+                    time: configuration.players.first!.time
+                )
+            }
+        }
+    }
     var playerTimesIndividuallyConfigurablePublisher: AnyPublisher<Bool, Never> {
         $playerTimesIndividuallyConfigurable.eraseToAnyPublisher()
     }

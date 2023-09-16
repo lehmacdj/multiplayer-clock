@@ -15,7 +15,16 @@ class UserDefaultsPersistedSettings: WritableSettings {
         $configuration
     }
 
-    @WrappedDefault(key: "playerTimesIndividuallyConfigurable") var playerTimesIndividuallyConfigurable = false
+    @WrappedDefault(key: "playerTimesIndividuallyConfigurable") var playerTimesIndividuallyConfigurable = false {
+        didSet {
+            if playerTimesIndividuallyConfigurable == false && oldValue {
+                configuration = MultiplayerClockConfiguration(
+                    playerCount: configuration.players.count,
+                    time: configuration.players.first!.time
+                )
+            }
+        }
+    }
     var playerTimesIndividuallyConfigurablePublisher: AnyPublisher<Bool, Never> {
         $playerTimesIndividuallyConfigurable
     }
