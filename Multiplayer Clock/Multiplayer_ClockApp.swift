@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct Multiplayer_ClockApp: App {
-    @StateObject var settings = TransientSettings()
+    @StateObject var settings = UserDefaultsPersistedSettings()
 
     var body: some Scene {
         WindowGroup {

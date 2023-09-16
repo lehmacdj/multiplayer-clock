@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Foil
 
-struct MultiplayerClockConfiguration {
+struct MultiplayerClockConfiguration: Codable {
     var players: [PlayerConfiguration]
 
     init(playerCount: Int, time: Duration) {
@@ -23,5 +24,29 @@ struct MultiplayerClockConfiguration {
     mutating func removePlayer() {
         assert(players.count > Constants.minPlayerCount, "can't have less than one player")
         players.removeLast()
+    }
+
+    static let `default` = Self(playerCount: 3, time: .minutes(5))
+}
+
+extension MultiplayerClockConfiguration: UserDefaultsSerializable {
+    typealias StoredValue = Data
+
+    var storedValue: Data {
+        let encoder = JSONEncoder()
+        do {
+            return try encoder.encode(self)
+        } catch {
+            return Data()
+        }
+    }
+
+    init(storedValue: Data) {
+        let decoder = JSONDecoder()
+        do {
+            self = try decoder.decode(MultiplayerClockConfiguration.self, from: storedValue)
+        } catch {
+            self = .default
+        }
     }
 }

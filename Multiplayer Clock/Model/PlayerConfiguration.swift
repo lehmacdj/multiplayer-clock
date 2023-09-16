@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct PlayerConfiguration {
+struct PlayerConfiguration: Codable {
     var time: Duration
 }
