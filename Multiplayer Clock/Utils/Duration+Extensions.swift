@@ -53,6 +53,8 @@ extension FormatStyle where Self == TimeLeft {
     static func timeLeft(showTenthsOfASecond: Bool) -> TimeLeft {
         TimeLeft(showTenthsOfASecond: showTenthsOfASecond)
     }
+
+    static var timeLeft: TimeLeft { timeLeft(showTenthsOfASecond: true) }
 }
 
 extension Date {
