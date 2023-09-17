@@ -178,7 +178,7 @@ struct TimeDisplay<CenterView: View>: View {
             labelPositions: [
                 (x: 0.85, y: 0.75, angle: .radians(3 * .pi / 2)),
                 (x: 0.43, y: 0.9, angle: .radians(0)),
-                (x: 0.2, y: 0.5, angle: .radians(.pi / 2)),
+                (x: 0.16, y: 0.5, angle: .radians(.pi / 2)),
                 (x: 0.43, y: 0.12, angle: .radians(.pi)),
                 (x: 0.85, y: 0.25, angle: .radians(3 * .pi / 2)),
             ]
@@ -318,7 +318,7 @@ struct TimeDisplay_Previews: PreviewProvider {
             ForEach(0..<n, id: \.self) { active in
                 let clock = MultiplayerClock(
                     playerCount: n,
-                    time: .minutes(5) + .seconds(55),
+                    time: .minutes(3) + .seconds(33),
                     settings: settings.eraseToAnySettings()
                 )
                 TimeDisplay(
