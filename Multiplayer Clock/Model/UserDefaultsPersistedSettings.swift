@@ -10,6 +10,16 @@ import Foil
 import Foundation
 
 class UserDefaultsPersistedSettings: WritableSettings {
+    init() {
+        $configuration.sink { [weak self] _ in self?.objectWillChange.send() }.store(in: &subscriptions)
+        $playerTimesIndividuallyConfigurable.sink { [weak self] _ in self?.objectWillChange.send() }.store(in: &subscriptions)
+        $countPastZero.sink { [weak self] _ in self?.objectWillChange.send() }.store(in: &subscriptions)
+        $pauseClockWhenBackgrounding.sink { [weak self] _ in self?.objectWillChange.send() }.store(in: &subscriptions)
+        $showTenthsOfASecond.sink { [weak self] _ in self?.objectWillChange.send() }.store(in: &subscriptions)
+    }
+
+    private var subscriptions = Set<AnyCancellable>()
+
     @WrappedDefault(key: "configuration") var configuration: MultiplayerClockConfiguration = .init(playerCount: 3, time: .minutes(5))
     var configurationPublisher: AnyPublisher<MultiplayerClockConfiguration, Never> {
         $configuration

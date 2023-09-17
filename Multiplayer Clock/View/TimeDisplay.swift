@@ -88,7 +88,7 @@ struct TimeDisplay<CenterView: View>: View {
             fractions: [0, 1.0/3.0, 2.0/3.0],
             labelPositions: [
                 (x: 0.5, y: 0.65, angle: .zero),
-                (x: 0.18, y: 0.30, angle: .radians(.pi / 2)),
+                (x: 0.14, y: 0.30, angle: .radians(.pi / 2)),
                 (x: 0.65, y: 0.18, angle: .radians(.pi)),
             ]
         ),
@@ -106,103 +106,103 @@ struct TimeDisplay<CenterView: View>: View {
             fractions: [0, 1.0/3.0, 2.0/3.0],
             labelPositions: [
                 (x: 0.65, y: 0.85, angle: .zero),
-                (x: 0.18, y: 0.7, angle: .radians(.pi / 2)),
+                (x: 0.14, y: 0.7, angle: .radians(.pi / 2)),
                 (x: 0.5, y: 0.3, angle: .radians(.pi)),
             ]
         ),
         [4, 0]: Configuration(
-            unitCenter: UnitPoint(x: 0.3, y: 0.3),
+            unitCenter: UnitPoint(x: 0.3, y: 0.35),
             fractions: [0, 0.25, 0.5, 0.75],
             labelPositions: [
-                (x: 0.5, y: 0.1, angle: .radians(.pi / 2)),
-                (x: 0.5, y: 0.4, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.7, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.9, angle: .radians(.pi / 2)),
+                (x: 0.65, y: 0.68, angle: .radians(3 * .pi / 2)),
+                (x: 0.15, y: 0.68, angle: .radians(.pi / 2)),
+                (x: 0.15, y: 0.20, angle: .radians(.pi / 2)),
+                (x: 0.65, y: 0.20, angle: .radians(3 * .pi / 2)),
             ]
         ),
         [4, 1]: Configuration(
-            unitCenter: UnitPoint(x: 0.7, y: 0.3),
+            unitCenter: UnitPoint(x: 0.7, y: 0.35),
             fractions: [0, 0.25, 0.5, 0.75],
             labelPositions: [
-                (x: 0.5, y: 0.1, angle: .radians(.pi / 2)),
-                (x: 0.5, y: 0.4, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.7, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.9, angle: .radians(.pi / 2)),
+                (x: 0.85, y: 0.68, angle: .radians(3 * .pi / 2)),
+                (x: 0.35, y: 0.68, angle: .radians(.pi / 2)),
+                (x: 0.35, y: 0.20, angle: .radians(.pi / 2)),
+                (x: 0.85, y: 0.20, angle: .radians(3 * .pi / 2)),
             ]
         ),
         [4, 2]: Configuration(
-            unitCenter: UnitPoint(x: 0.3, y: 0.7),
+            unitCenter: UnitPoint(x: 0.7, y: 0.66),
             fractions: [0, 0.25, 0.5, 0.75],
             labelPositions: [
-                (x: 0.5, y: 0.1, angle: .radians(.pi / 2)),
-                (x: 0.5, y: 0.4, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.7, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.9, angle: .radians(.pi / 2)),
+                (x: 0.85, y: 0.35, angle: .radians(3 * .pi / 2)),
+                (x: 0.35, y: 0.35, angle: .radians(.pi / 2)),
+                (x: 0.35, y: 0.82, angle: .radians(.pi / 2)),
+                (x: 0.85, y: 0.82, angle: .radians(3 * .pi / 2)),
             ]
         ),
         [4, 3]: Configuration(
-            unitCenter: UnitPoint(x: 0.7, y: 0.7),
+            unitCenter: UnitPoint(x: 0.3, y: 0.66),
             fractions: [0, 0.25, 0.5, 0.75],
             labelPositions: [
-                (x: 0.5, y: 0.1, angle: .radians(.pi / 2)),
-                (x: 0.5, y: 0.4, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.7, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.9, angle: .radians(.pi / 2)),
+                (x: 0.65, y: 0.35, angle: .radians(3 * .pi / 2)),
+                (x: 0.15, y: 0.35, angle: .radians(.pi / 2)),
+                (x: 0.15, y: 0.82, angle: .radians(.pi / 2)),
+                (x: 0.65, y: 0.82, angle: .radians(3 * .pi / 2)),
             ]
         ),
         [5, 0]: Configuration(
-            unitCenter: UnitPoint(x: 0.37, y: 0.32),
-            fractions: [0, 0.25, 0.33, 0.62, 0.8],
+            unitCenter: UnitPoint(x: 0.4, y: 0.35),
+            fractions: [0, 0.25, 0.325, 0.62, 0.8],
             labelPositions: [
-                (x: 0.5, y: 0.1, angle: .radians(.pi / 2)),
-                (x: 0.5, y: 0.4, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.7, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.9, angle: .radians(.pi / 2)),
-                (x: 0.5, y: 0.9, angle: .radians(.pi / 2)),
+                (x: 0.7, y: 0.68, angle: .radians(3 * .pi / 2)),
+                (x: 0.2, y: 0.82, angle: .radians(.pi / 2)),
+                (x: 0.12, y: 0.4, angle: .radians(.pi / 2)),
+                (x: 0.24, y: 0.12, angle: .radians(.pi)),
+                (x: 0.79, y: 0.2, angle: .radians(3 * .pi / 2)),
             ]
         ),
         [5, 1]: Configuration(
-            unitCenter: UnitPoint(x: 0.6, y: 0.35),
-            fractions: [0, 0.2, 0.42, 0.6, 0.8],
+            unitCenter: UnitPoint(x: 0.7, y: 0.35),
+            fractions: [0, 0.25, 0.42, 0.6, 0.75],
             labelPositions: [
-                (x: 0.5, y: 0.1, angle: .radians(.pi / 2)),
-                (x: 0.5, y: 0.4, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.7, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.9, angle: .radians(.pi / 2)),
-                (x: 0.5, y: 0.9, angle: .radians(.pi / 2)),
+                (x: 0.85, y: 0.68, angle: .radians(3 * .pi / 2)),
+                (x: 0.35, y: 0.75, angle: .radians(.pi / 2)),
+                (x: 0.12, y: 0.34, angle: .radians(.pi / 2)),
+                (x: 0.42, y: 0.12, angle: .radians(.pi)),
+                (x: 0.85, y: 0.20, angle: .radians(3 * .pi / 2)),
             ]
         ),
         [5, 2]: Configuration(
-            unitCenter: UnitPoint(x: 0.67, y: 0.5),
-            fractions: [0, 0.2, 0.3, 0.7, 0.8],
+            unitCenter: UnitPoint(x: 0.7, y: 0.5),
+            fractions: [0, 0.25, 0.355, 0.645, 0.75],
             labelPositions: [
-                (x: 0.5, y: 0.1, angle: .radians(.pi / 2)),
-                (x: 0.5, y: 0.4, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.7, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.9, angle: .radians(.pi / 2)),
-                (x: 0.5, y: 0.9, angle: .radians(.pi / 2)),
+                (x: 0.85, y: 0.75, angle: .radians(3 * .pi / 2)),
+                (x: 0.43, y: 0.9, angle: .radians(0)),
+                (x: 0.2, y: 0.5, angle: .radians(.pi / 2)),
+                (x: 0.43, y: 0.12, angle: .radians(.pi)),
+                (x: 0.85, y: 0.25, angle: .radians(3 * .pi / 2)),
             ]
         ),
         [5, 3]: Configuration(
-            unitCenter: UnitPoint(x: 0.6, y: 0.65),
-            fractions: [0, 0.2, 0.4, 0.58, 0.8],
+            unitCenter: UnitPoint(x: 0.7, y: 0.65),
+            fractions: [0, 0.25, 0.4, 0.58, 0.75],
             labelPositions: [
-                (x: 0.5, y: 0.1, angle: .radians(.pi / 2)),
-                (x: 0.5, y: 0.4, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.7, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.9, angle: .radians(.pi / 2)),
-                (x: 0.5, y: 0.9, angle: .radians(.pi / 2)),
+                (x: 0.85, y: 0.82, angle: .radians(3 * .pi / 2)),
+                (x: 0.42, y: 0.9, angle: .radians(0)),
+                (x: 0.12, y: 0.66, angle: .radians(.pi / 2)),
+                (x: 0.35, y: 0.25, angle: .radians(.pi / 2)),
+                (x: 0.85, y: 0.35, angle: .radians(3 * .pi / 2)),
             ]
         ),
         [5, 4]: Configuration(
-            unitCenter: UnitPoint(x: 0.37, y: 0.68),
-            fractions: [0, 0.2, 0.38, 0.67, 0.75],
+            unitCenter: UnitPoint(x: 0.4, y: 0.65),
+            fractions: [0, 0.2, 0.38, 0.675, 0.75],
             labelPositions: [
-                (x: 0.5, y: 0.1, angle: .radians(.pi / 2)),
-                (x: 0.5, y: 0.4, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.7, angle: .radians(3 * .pi / 2)),
-                (x: 0.5, y: 0.9, angle: .radians(.pi / 2)),
-                (x: 0.5, y: 0.9, angle: .radians(.pi / 2)),
+                (x: 0.79, y: 0.8, angle: .radians(3 * .pi / 2)),
+                (x: 0.24, y: 0.89, angle: .radians(0)),
+                (x: 0.12, y: 0.61, angle: .radians(.pi / 2)),
+                (x: 0.2, y: 0.18, angle: .radians(.pi / 2)),
+                (x: 0.7, y: 0.32, angle: .radians(3 * .pi / 2)),
             ]
         ),
         // TODO: durations.count == 6
