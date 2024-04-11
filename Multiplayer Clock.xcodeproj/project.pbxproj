@@ -97,6 +97,7 @@
 		0375E7162A5B2AE5000C3C67 /* TimeDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDisplay.swift; sourceTree = "<group>"; };
 		0375E7182A5B375B000C3C67 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		0375E71A2A5B923A000C3C67 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		03A788002BC7998F00273CCC /* Multiplayer-Clock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Multiplayer-Clock-Info.plist"; sourceTree = SOURCE_ROOT; };
 		03ABC4252A5CE91F005244A3 /* DurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationTests.swift; sourceTree = "<group>"; };
 		03ABC4272A5CF162005244A3 /* SystemFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemFont.swift; sourceTree = "<group>"; };
 		03E363642AB6209100761F9D /* ComputedTimeDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputedTimeDisplay.swift; sourceTree = "<group>"; };
@@ -153,6 +154,7 @@
 		0375E6A82A58E149000C3C67 /* Multiplayer Clock */ = {
 			isa = PBXGroup;
 			children = (
+				03A788002BC7998F00273CCC /* Multiplayer-Clock-Info.plist */,
 				0375E6EC2A59124E000C3C67 /* Utils */,
 				0375E6DD2A58EBE3000C3C67 /* ViewModel */,
 				0375E6D82A58E759000C3C67 /* View */,
@@ -583,6 +585,7 @@
 				DEVELOPMENT_TEAM = YJTZ9H869C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Multiplayer-Clock-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Multi Clock";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -615,6 +618,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = YJTZ9H869C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Multiplayer-Clock-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Multi Clock";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
