@@ -106,7 +106,7 @@ struct ComputedTimeDisplay<CenterView: View>: View {
     }
 
     private func durations(onSide side: Int, isHorizontal: Bool) -> Int {
-        var sideCounts = isHorizontal ? sideForHorizontalLayout : sideForVerticalLayout
+        let sideCounts = isHorizontal ? sideForHorizontalLayout : sideForVerticalLayout
         return sideCounts
             .filter { $0 == side }
             .count
