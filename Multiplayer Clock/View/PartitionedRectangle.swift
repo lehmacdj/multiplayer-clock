@@ -69,7 +69,16 @@ struct PartitionedRectangle<CenterView: View>: View {
                         path.move(to: center)
                         path.addLine(to: intersections[ix1])
                         for (cix, cornerAngle) in cornerAngles.enumerated() {
-                            if cornerAngle > angle1 && (cornerAngle < angle2 || angle2 < angle1) {
+                            let shouldIncludeCorner: Bool
+                            if angle2 < angle1 {
+                                // Wrap-around case: partition spans from angle1 to 2π, then 0 to angle2
+                                shouldIncludeCorner = cornerAngle > angle1 || cornerAngle < angle2
+                            } else {
+                                // Normal case: partition spans from angle1 to angle2
+                                shouldIncludeCorner = cornerAngle > angle1 && cornerAngle < angle2
+                            }
+
+                            if shouldIncludeCorner {
                                 path.addLine(to: corners[cix])
                             }
                         }
