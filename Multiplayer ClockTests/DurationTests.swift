@@ -39,8 +39,42 @@ final class DurationTests: XCTestCase {
     func testAppleMinuteSecondNegativeDurationTimeFormat() {
         XCTAssertEqual(
             Duration.seconds(-77).formatted(.time(pattern: .minuteSecond)),
-            "-1:-17",
-            "Apple has fixed the bug in their .minuteSecond time format for negative numbers! Update our custom .timeLeft to not work around this bug."
+            "-1:17",
+            "Apple's .minuteSecond time format now correctly handles negative numbers"
+        )
+    }
+
+    func testNegativeZeroNotShown() {
+        // When showing tenths, -0.1 should display as "-0.1"
+        XCTAssertEqual(
+            Duration.seconds(-0.1).formatted(.timeLeft(showTenthsOfASecond: true)),
+            "-0.1"
+        )
+
+        // When not showing tenths, values that round to 0 should display as "0", not "-0"
+        XCTAssertEqual(
+            Duration.seconds(-0.4).formatted(.timeLeft(showTenthsOfASecond: false)),
+            "0"
+        )
+        XCTAssertEqual(
+            Duration.seconds(-0.1).formatted(.timeLeft(showTenthsOfASecond: false)),
+            "0"
+        )
+
+        // When showing tenths, values that round to 0.0 should display as "0.0", not "-0.0"
+        XCTAssertEqual(
+            Duration.seconds(-0.04).formatted(.timeLeft(showTenthsOfASecond: true)),
+            "0.0"
+        )
+
+        // Positive zero should still be "0"
+        XCTAssertEqual(
+            Duration.seconds(0).formatted(.timeLeft(showTenthsOfASecond: false)),
+            "0"
+        )
+        XCTAssertEqual(
+            Duration.seconds(0).formatted(.timeLeft(showTenthsOfASecond: true)),
+            "0.0"
         )
     }
 }

@@ -30,22 +30,22 @@ struct TimeLeft: FormatStyle {
     let showTenthsOfASecond: Bool
 
     func format(_ duration: Duration) -> String {
-        // apple's time formatter formats negative durations weirdly as "-6:-23" for example
-        let nonNegativeFormat = formatNonNegative(duration.magnitude)
-        let prefix = duration < .zero ? "-" : ""
-        return prefix + nonNegativeFormat
-    }
-
-    private func formatNonNegative(_ duration: Duration) -> String {
-        if duration >= .minutes(100) {
-            return duration.formatted(.time(pattern: .hourMinuteSecond))
-        } else if duration >= .minutes(1) {
-            return duration.formatted(.time(pattern: .minuteSecond))
+        let formatted: String
+        if duration.magnitude >= .minutes(100) {
+            formatted = duration.formatted(.time(pattern: .hourMinuteSecond))
+        } else if duration.magnitude >= .minutes(1) {
+            formatted = duration.formatted(.time(pattern: .minuteSecond))
         } else if showTenthsOfASecond {
-            return duration.seconds.formatted(.number.precision(.fractionLength(1)))
+            formatted = duration.seconds.formatted(.number.precision(.fractionLength(1)))
         } else {
-            return duration.seconds.formatted(.number.precision(.fractionLength(0)))
+            formatted = duration.seconds.formatted(.number.precision(.fractionLength(0)))
         }
+
+        // Avoid showing "-0" or "-0.0" by replacing with positive zero
+        if formatted == "-0" || formatted == "-0.0" {
+            return formatted.replacingOccurrences(of: "-", with: "")
+        }
+        return formatted
     }
 }
 
