@@ -299,6 +299,7 @@ struct TimeDisplay<CenterView: View>: View {
                     let duration = durations[ix]
                     let labelPosition = labelPositions[ix]
                     Text(duration.formatted(.timeLeft(showTenthsOfASecond: settings.showTenthsOfASecond)))
+                        .monospacedDigit()
                         .systemFont(size: 72, relativeTo: .largeTitle)
                         .rotationEffect(labelPosition.angle)
                         .offset(x: labelPosition.dx, y: labelPosition.dy)

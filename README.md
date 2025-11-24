@@ -8,12 +8,14 @@ Features:
 - Show / hide tenths of a second when players have less than 10 seconds remaining
 
 Want to implement / fix (prioritized):
-- colon separating minutes/seconds shouldn't move while time counts down (currently the entire label is centered, I think we need to lay out the minute/seconds separately)
-- increments of various flavors, plain, fisher, byo yomi, etc.
-- 6 players
 - automatically lay out rays/times instead of hard coding positions
+  - 6 player support
+  - better layout on iPad/larger devices
+- increments of various flavors, plain, fisher, byo yomi, etc.
 - custom colors
 - different layouts
 
 Features I don't currently have interest in implementing:
 - Edit player's times mid game
+- Animation / alert when player's time runs out
+- Should pausing when tapping work for the single player timer?
