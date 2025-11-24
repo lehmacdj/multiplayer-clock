@@ -15,6 +15,7 @@ struct ClockControls: View {
 
     @State private var resetWarningPresented = false
     @State private var isShowingSettings = false
+    @EnvironmentObject var settings: AnyWritableSettings
 
     var body: some View {
         Group {
@@ -44,6 +45,7 @@ struct ClockControls: View {
         }
         .sheet(isPresented: $isShowingSettings) {
             SettingsScreen()
+                .environmentObject(settings)
         }
     }
 }
@@ -55,5 +57,6 @@ struct ClockControls_Previews: PreviewProvider {
                 ClockControls(state: state, play: {}, pause: {}, reset: {})
             }
         }
+        .environmentObject(TransientSettings().eraseToAnyWritableSettings())
     }
 }
