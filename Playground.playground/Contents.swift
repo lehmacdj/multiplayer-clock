@@ -7,3 +7,12 @@ import PlaygroundSupport
 import SwiftUI
 import UIKit
 
+var angles = [[Double]]()
+for n in 1...6 {
+    angles.append([])
+    for i in 0..<n {
+        angles[n - 1].append(Double(i) / Double(n))
+    }
+}
+
+print(angles)
