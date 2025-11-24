@@ -25,7 +25,7 @@ struct SettingsScreen: View {
                 }
 
                 Section {
-                    Toggle("Separate player times?", isOn: $settings.playerTimesIndividuallyConfigurable)
+                    Toggle("Different times for each player?", isOn: $settings.playerTimesIndividuallyConfigurable)
                     if !settings.playerTimesIndividuallyConfigurable {
                         NavigationLink("All Players: \(settings.allPlayersTime.wrappedValue.formatted(.units(allowed: [.minutes, .seconds])))") {
                             DurationPicker(duration: settings.allPlayersTime)
