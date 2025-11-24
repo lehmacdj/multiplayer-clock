@@ -134,20 +134,20 @@ struct TimeDisplay<CenterView: View>: View {
             unitCenter: UnitPoint(x: 0.7, y: 0.66),
             fractions: [0, 0.25, 0.5, 0.75],
             labelPositions: [
-                (x: 0.85, y: 0.35, angle: .radians(3 * .pi / 2)),
-                (x: 0.35, y: 0.35, angle: .radians(.pi / 2)),
-                (x: 0.35, y: 0.82, angle: .radians(.pi / 2)),
                 (x: 0.85, y: 0.82, angle: .radians(3 * .pi / 2)),
+                (x: 0.35, y: 0.82, angle: .radians(.pi / 2)),
+                (x: 0.35, y: 0.35, angle: .radians(.pi / 2)),
+                (x: 0.85, y: 0.35, angle: .radians(3 * .pi / 2)),
             ]
         ),
         [4, 3]: Configuration(
             unitCenter: UnitPoint(x: 0.3, y: 0.66),
             fractions: [0, 0.25, 0.5, 0.75],
             labelPositions: [
-                (x: 0.65, y: 0.35, angle: .radians(3 * .pi / 2)),
-                (x: 0.15, y: 0.35, angle: .radians(.pi / 2)),
-                (x: 0.15, y: 0.82, angle: .radians(.pi / 2)),
                 (x: 0.65, y: 0.82, angle: .radians(3 * .pi / 2)),
+                (x: 0.15, y: 0.82, angle: .radians(.pi / 2)),
+                (x: 0.15, y: 0.35, angle: .radians(.pi / 2)),
+                (x: 0.65, y: 0.35, angle: .radians(3 * .pi / 2)),
             ]
         ),
         [5, 0]: Configuration(
