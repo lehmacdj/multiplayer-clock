@@ -2,14 +2,16 @@
 Just like a chess clock, but for 1-6 players instead of just 2.
 
 Features:
-- Select from 1-6 players
+- Select from 1-5 players
 - Individually edit the time for different players
 - Count past zero, instead of stopping the timer when a player runs out of time
 - Show / hide tenths of a second when players have less than 10 seconds remaining
 
-Want to implement / fix:
+Want to implement / fix (prioritized):
 - colon separating minutes/seconds shouldn't move while time counts down (currently the entire label is centered, I think we need to lay out the minute/seconds separately)
 - increments of various flavors, plain, fisher, byo yomi, etc.
+- 6 players
+- automatically lay out rays/times instead of hard coding positions
 - custom colors
 - different layouts
 
